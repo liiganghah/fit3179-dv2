@@ -6,7 +6,7 @@
     <title>Nineteen in a hundred · Musical instruments in Australia</title>
     <meta
       name="description"
-      content="A FIT3179 story about who in Australia still sings or plays, and which instruments the country imports."
+      content="Who in Australia still sings or plays, and which instruments the country imports."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,13 +25,13 @@
         <p class="dek">
           In 2021–22, nineteen in every hundred Australian children sang or played an instrument outside school.
           Four years earlier it was twenty-three. The children who still play usually take lessons, and they do not
-          practise for long. The instruments crossing the border tell a second story: the piano used to be the
-          country’s biggest import bill, and the electric guitar has taken its place.
+          practise for long. The instruments crossing the border tell a second story: the piano used to lead the
+          import bill, and the electric guitar has taken its place.
         </p>
         <p class="byline">
-          For a general reader in Australia. Surveys from the
-          <strong>Australian Bureau of Statistics</strong>, 2017–18 and 2021–22. Instrument shipments from
-          <strong>UN Comtrade</strong>, 2015–2024.
+          liiganghah · 14 October 2026. Written for a general reader in Australia.
+          Participation from the <strong>Australian Bureau of Statistics</strong>, 2017–18 and 2021–22.
+          Shipments from <strong>UN Comtrade</strong>, 2015–2024.
         </p>
       </div>
     </header>
@@ -45,30 +45,30 @@
             The Bureau of Statistics asks whether a child sang or played a musical instrument outside school hours
             in the previous year. Choir and piano are one answer. Informal singing around the house is not counted.
             In 2021–22 that answer was yes for <strong>19.3 percent</strong> of children aged 5 to 14: about
-            621,000 children, out of 3.2 million.
+            621,000 children.
           </p>
-          <div class="chart" id="chart-isotype" role="img" aria-label="One hundred squares, nineteen filled, standing for children who sing or play."></div>
+          <div class="chart" id="chart-isotype" role="img" aria-label="One hundred squares, nineteen filled, for children who sang or played."></div>
           <p class="caption">
-            Figure 1. Isotype. Nineteen squares stand for the 19.3 percent who sang or played.
-            <a href="specs/01-isotype.vl.json">Vega-Lite JSON</a>
+            Figure 1. Isotype. Nineteen squares stand for the children who sang or played. The survey figure is
+            19.3 percent, so the last square is left empty rather than partly filled.
+            <a href="specs/09-isotype.vl.json">Vega-Lite JSON</a>
           </p>
-          <p>
-            That share had been 23.0 percent in 2017–18. Music was not alone. Drama, dancing and creative writing
-            also fell. Art and craft did not move at all: 38.8 percent in both surveys. Reading for pleasure, which
-            is not on this chart, fell from 78.5 to 72.4 percent. Screen-based activities stayed near 90 percent.
-          </p>
-          <div class="chart" id="chart-slope"></div>
+          <div class="chart" id="chart-slope" role="img" aria-label="Slope chart comparing children's creative activities in 2017–18 and 2021–22."></div>
           <p class="caption">
             Figure 2. Slope chart. Each line is one creative activity. The heavy line is singing or playing.
             Click a name in the legend to follow that line alone.
-            <a href="specs/02-slope-activities.vl.json">Vega-Lite JSON</a>
+            <a href="specs/01-slope.vl.json">Vega-Lite JSON</a>
+          </p>
+          <p>
+            Music was not alone. Drama, dancing and creative writing also fell. Art and craft did not move:
+            38.8 percent in both surveys. Reading for pleasure, which is not on this chart, fell from 78.5 to
+            72.4 percent. Screen-based activities stayed near 90 percent.
           </p>
           <div class="note">
             <p>
               <strong>A limit of the survey.</strong> “Singing or playing” is a single question, so this page cannot
-              say how many children play the guitar rather than sing in a choir. The shipping figures in the second
-              half of the page are instruments only. They are a different question: not who plays, but what Australia
-              buys.
+              say how many children play the guitar rather than sing in a choir. The shipping figures later on are
+              instruments only. They answer a different question: not who plays, but what Australia buys.
             </p>
           </div>
         </div>
@@ -79,22 +79,18 @@
         <div>
           <h2>A peak in the middle of primary school</h2>
           <p>
-            Playing is not spread evenly through childhood. It is lowest at ages 5 to 8 (16.1 percent), highest at
-            9 to 11 (23.8 percent), then 19.0 percent at 12 to 14. The rise into the middle of primary school is
-            larger than the survey’s margin of error. The later dip is smaller, and the two ranges nearly touch, so
-            it is safer to say the rate peaks at 9 to 11 than to insist it then falls.
+            Playing is lowest at ages 5 to 8 (16.1 percent), highest at 9 to 11 (23.8 percent), then 19.0 percent
+            at 12 to 14. The other creative activities do not share that shape. Craft and dancing decline as
+            children get older. Making digital content does the opposite: 8.4 percent of the youngest children,
+            and about 20 percent from age 9. Music rises after the first years of school and is still common at
+            the start of high school.
           </p>
-          <p>
-            The other creative activities do not share that shape. Craft and dancing decline as children get older.
-            Making digital content does the opposite: 8.4 percent of the youngest children, and about 20 percent
-            from age 9. Music is unusual in rising after the first years of school and still being common at the
-            start of high school.
-          </p>
-          <div class="chart" id="chart-heatmap-age"></div>
+          <div class="chart" id="chart-heatmap" role="img" aria-label="Heatmap of creative activities by age band."></div>
           <p class="caption">
-            Figure 3. Heatmap. The number in each cell is the percent of children in that age group. Screen time
-            and reading are left off so the creative activities can be compared.
-            <a href="specs/03-heatmap-age.vl.json">Vega-Lite JSON</a>
+            Figure 3. Heatmap. The number in each cell is the percent of children in that age group. Art and craft
+            is the darkest row because it is the most common, not because it is the subject. The shape of the
+            music row is the point.
+            <a href="specs/02-heatmap.vl.json">Vega-Lite JSON</a>
           </p>
         </div>
       </section>
@@ -107,43 +103,20 @@
             The adult question is stricter. It counts singing or playing as a soloist or in a group, including
             lessons and practice, and it leaves out karaoke and singing around the house. On that definition only
             <strong>3.8 percent</strong> of people aged 15 and over took part in 2021–22: about 770,000 people.
+            The highest adult age group is 15 to 24, at 6.7 percent. From the late twenties the rate stays near
+            3 percent. Men (4.4 percent) are slightly ahead of women (3.2 percent).
           </p>
-          <div class="stats">
-            <div class="stat">
-              <b>6.7%</b>
-              <span>of 15–24 year olds sing or play. This is the highest adult age group.</span>
-            </div>
-            <div class="stat">
-              <b>3.4%</b>
-              <span>of people in their late twenties and thirties. The rate then stays near 3 percent for life.</span>
-            </div>
-            <div class="stat">
-              <b>4.4% vs 3.2%</b>
-              <span>men, then women. The gap is small, and it is larger than the margin of error.</span>
-            </div>
-          </div>
-          <p>
-            Men are slightly more likely to play than women, which is the reverse of dancing, craft and most other
-            creative activities in the same survey. Of the adults who do play, about 8 percent are paid for it and
-            about 26 percent do it as volunteers. This is mostly an unpaid habit, not a job.
-          </p>
-          <p>
-            Writing songs or producing music, shown in the lower chart, is a related but different activity. For
-            young men it is almost as common as playing. It then falls steadily with age, instead of flattening.
-          </p>
-          <div class="chart" id="chart-adult"></div>
+          <div class="chart" id="chart-adults" role="img" aria-label="Line chart of adult participation by age and sex."></div>
           <p class="caption">
-            Figure 4. Two line charts, counted here as one small-multiple. The same age scale and the same percent
-            scale are used in both, so the drop in playing can be compared with the drop in writing music.
-            Hover a point for the margin of error on playing. The Bureau did not publish a margin for every
-            writing-music cell, so those tooltips leave it blank.
-            <a href="specs/04-adult-age-sex.vl.json">Vega-Lite JSON</a>
+            Figure 4. Line chart. Hover a point for the margin of error. The Bureau’s 95 percent margin is the
+            range the result would usually fall in if the survey were repeated.
+            <a href="specs/03-adults.vl.json">Vega-Lite JSON</a>
           </p>
           <div class="note">
             <p>
-              Do not read the child chart and the adult chart as one continuous line. A 14-year-old and a
-              16-year-old were asked different questions. The fall from about one child in five to about one adult
-              in fifteen is still the point: playing is common at school age and uncommon afterwards.
+              Do not read the child charts and this chart as one continuous line. A 14-year-old and a 16-year-old
+              were asked different questions. The fall from about one child in five to about one adult in twenty-six
+              is still the point: playing is common at school age and uncommon afterwards.
             </p>
           </div>
         </div>
@@ -155,40 +128,17 @@
           <h2>Lessons, then a short practice</h2>
           <p>
             Among children who sing or play, <strong>about two in three take lessons</strong> (401,700 of 620,700).
-            That is more common than drama lessons and less universal than dance lessons. The pathway below counts
-            every child, so the thin green band is the whole story of music learning: most children are in the grey.
+            Inside that group, the largest block is children who kept going for more than 13 weeks and still did
+            under two hours in a usual week: <strong>58.7 percent of the lesson-takers</strong>. Children with no
+            lessons have the same habit. More than half of them also stayed with it for most of the year and
+            practised very little.
           </p>
-          <div class="chart" id="chart-sankey"></div>
+          <div class="chart" id="chart-marimekko" role="img" aria-label="Marimekko of lessons and weekly practice among children who sing or play."></div>
           <p class="caption">
-            Figure 5. Sankey. The width of each band is the share of all children aged 5–14. “Do not” means they
-            did not sing or play outside school. A few thousand children are missing between the player total and
-            the lesson split because the Bureau rounds each cell.
-            <a href="specs/05-sankey-pathway.vl.json">Vega-Lite JSON</a>
-          </p>
-          <p>
-            Lessons do not mean long hours. The mosaic splits players by whether they take lessons, and then by how
-            the year looked. The wide left column is the 65 percent who take lessons. Inside it, the largest block
-            is children who kept going for more than 13 weeks but still did under two hours in a usual week:
-            <strong>58.7 percent of the lesson-takers</strong>. The right column, children with no lessons, has the
-            same habit. More than half of them also stayed with it for most of the year and practised very little.
-          </p>
-          <div class="chart" id="chart-mosaic"></div>
-          <p class="caption">
-            Figure 6. Marimekko. Column width is the share of players. The printed percentages are the share
-            <em>inside</em> that column, not of all children. The left column is “takes lessons”.
-            <a href="specs/06-mosaic-practice.vl.json">Vega-Lite JSON</a>
-          </p>
-          <p>
-            Put another way: of every hundred children who sing or play, 72 do it for under two hours in a usual
-            week. Only about one in a hundred reaches 20 hours. The rose chart gives every time-band the same
-            angle, and lets the length show how large the group is. The long petal is the short week.
-          </p>
-          <div class="chart" id="chart-rose"></div>
-          <p class="caption">
-            Figure 7. Nightingale rose. Equal angles, length shows the percent of players. The 72.1 percent figure
-            has a margin of error of ±4.2 percentage points, so the true share is very likely between about 68 and
-            76.
-            <a href="specs/07-rose-hours.vl.json">Vega-Lite JSON</a>
+            Figure 5. Marimekko. The printed percentages are the share inside that column, not of all children.
+            A few thousand children are missing between the player total and the lesson split because the Bureau
+            rounds each cell.
+            <a href="specs/04-marimekko.vl.json">Vega-Lite JSON</a>
           </p>
         </div>
       </section>
@@ -199,31 +149,22 @@
           <h2>Hearing an instrument, state by state</h2>
           <p>
             The Bureau does not publish singing or playing by state. It does publish whether children went to a
-            live music performance outside school. That is not the same as learning an instrument. It is the public
-            side of the same musical life: a concert, a gig, a recital.
+            live music performance outside school. That is not the same as learning an instrument. It is the
+            public side of the same musical life: a concert, a gig, a recital.
           </p>
           <p>
             Nationally, 12.3 percent of children aged 5–14 had been to live music in the year. New South Wales
-            (8.7 ± 1.8) and Victoria (9.2 ± 1.7) are clearly lower than Queensland (16.0 ± 3.8) and Western
-            Australia (18.4 ± 4.1). Those ranges do not overlap. The Northern Territory is the darkest colour, at
-            23.4, but its margin is ±6 points, so it is not safe to call it first. The pattern that holds is
-            simpler: the two largest states are where children are least likely to have heard music played live.
+            (8.7 ± 1.8) and Victoria (9.2 ± 1.7) sit below Queensland (16.0 ± 3.8) and Western Australia
+            (18.4 ± 4.1). Those ranges do not overlap. The Northern Territory is the darkest colour, at 23.4, but
+            its margin is ±6 points, so it is not safe to call it first.
           </p>
-          <div class="chart" id="chart-states"></div>
+          <div class="chart" id="chart-states" role="img" aria-label="Choropleth of children's live music attendance by state."></div>
           <p class="caption">
-            Figure 8. Choropleth, one of three map idioms. The projection is conic equal-area, the usual choice for
-            a rate across Australia, because it keeps areas comparable. Labels are rounded. Hover for the published
+            Figure 6. Choropleth, the first of three maps. The projection is conic equal-area,
+            so a rate can be compared across states without stretching Western Australia. Hover for the published
             percent and the margin of error.
-            <a href="specs/11-choropleth-states.vl.json">Vega-Lite JSON</a>
+            <a href="specs/06-choropleth.vl.json">Vega-Lite JSON</a>
           </p>
-          <div class="note">
-            <p>
-              <strong>What a margin of error means.</strong> These figures come from a sample, not from every
-              child. The ± number is the Bureau’s 95 percent margin. If the survey were repeated, the result would
-              usually land inside that range. When two ranges do not overlap, the difference is unlikely to be a
-              fluke of the sample.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -251,43 +192,37 @@
               <span>the 2024 bill. Electric guitars were still first, at $40 million.</span>
             </div>
           </div>
-          <p>
-            From 2015 to 2018 the largest slice of the bill was acoustic pianos. In 2019 electric guitars moved
-            into first place and stayed there. The gap opened widest in 2021 and 2022, the years after the
-            lockdowns, when the whole bill jumped from $137 million to $200 million and then eased back. By 2024
-            pianos had slipped to third, behind electric guitars and electric keyboards.
-          </p>
-          <div class="chart" id="chart-bump"></div>
+          <div class="chart" id="chart-bump" role="img" aria-label="Bump chart of instrument import ranks from 2015 to 2024."></div>
           <p class="caption">
-            Figure 9. Bump chart. Rank 1 is the family Australia spent the most on importing that year. Click a
-            family in the legend to dim the others. “Other wind” includes recorders, flutes, clarinets, harmonicas
-            and similar instruments. “Electric guitars” is the customs heading for electric instruments that are
-            not keyboards, so a small number of other electric instruments sit in that line.
-            <a href="specs/08-bump-imports.vl.json">Vega-Lite JSON</a>
+            Figure 7. Bump chart. “Electric guitars” is the customs heading for electric instruments that are not
+            keyboards, so a small number of other electric instruments sit in that line. “Other wind” includes
+            recorders, flutes, clarinets and harmonicas. Acoustic pianos here include uprights, grands, and a
+            small residual keyboard heading.
+            <a href="specs/05-bump.vl.json">Vega-Lite JSON</a>
           </p>
           <p>
-            The waterfall adds the dollars, not just the ranks. Almost all of the growth since 2015 is electric
-            guitars, about $19 million. Keyboards, student strings and grands add smaller rises. Acoustic guitars,
-            as a bill, are slightly smaller than they were in 2015. Percussion did not move.
+            Rank hides the size of the change. From 2015 to 2024 the bill rose by about $29 million, and
+            electric guitars account for about $20 million of that. Acoustic guitars, as a bill, are slightly
+            smaller than they were. Percussion did not move.
           </p>
-          <div class="chart" id="chart-waterfall"></div>
+          <div class="chart" id="chart-waterfall" role="img" aria-label="Waterfall of the change in the instrument import bill from 2015 to 2024."></div>
           <p class="caption">
-            Figure 10. Waterfall. Black bars are the total bill in 2015 and 2024. Floating bars are the change for
-            each family, in millions of US dollars.
-            <a href="specs/09-waterfall-change.vl.json">Vega-Lite JSON</a>
+            Figure 8. Waterfall. The black bars are the total bill in 2015 and 2024. The floating bars are the
+            change for each family, in millions of US dollars.
+            <a href="specs/10-waterfall.vl.json">Vega-Lite JSON</a>
           </p>
           <p>
-            Area in the treemap is the 2024 bill. Electric guitars are the largest block, then electric keyboards,
-            then acoustic pianos as a family. Inside the piano family the split is worth knowing, even though the
-            treemap keeps them together: Australia imported <strong>1,115 grand pianos</strong>, at about $11,600
-            each at the border, and <strong>4,829 uprights</strong>, at about $2,000. A grand costs roughly six
-            uprights. An electric guitar, of which 134,000 arrived, averaged about $300. A percussion item averaged
-            about $22, which is why hundreds of thousands of them do not dominate the bill.
+            The same 2024 bill, drawn as area. Electric guitars are the largest block, then electric keyboards,
+            then acoustic pianos. Australia imported <strong>1,115 grand pianos</strong> and
+            <strong>4,829 uprights</strong>. An electric guitar, of which about 134,000 arrived, is a much smaller
+            object. That is why the count and the bill tell different stories, and why the picture uses the bill.
           </p>
-          <div class="chart" id="chart-treemap"></div>
+          <div class="chart" id="chart-treemap" role="img" aria-label="Treemap of the 2024 instrument import bill."></div>
           <p class="caption">
-            Figure 11. Treemap, drawn with Vega. Area is 2024 import value. Hover a block for the dollars.
-            <a href="specs/10-treemap-2024.vg.json">Vega JSON</a>
+            Figure 9. Treemap. Area is 2024 import value. The thin brass strip is left unlabelled so the type stays
+            readable. The piano count in the hover is uprights plus grands (5,944). A residual keyboard heading of
+            about $280,000 is included in the piano dollars and is not counted as pianos.
+            <a href="specs/08-treemap.vl.json">Vega-Lite JSON</a>
           </p>
         </div>
       </section>
@@ -300,42 +235,29 @@
             In 2024, four origins accounted for most of the value: China ($37 million), the United States
             ($25 million), Japan ($22 million) and Indonesia ($18 million). Germany and Malaysia followed, at about
             $8 million each. The circles use area, not the size of the country. A choropleth of these dollars would
-            have made China look important partly because China is large. The dollars are what matter, so the
-            circles are sized by the dollars.
+            have made China look important partly because China is large.
           </p>
-          <div class="chart" id="chart-symbols"></div>
+          <div class="chart" id="chart-symbols" role="img" aria-label="Proportional symbol map of instrument import origins in 2024."></div>
           <p class="caption">
-            Figure 12. Proportional symbol map. Equal Earth projection, which keeps relative area honest across
-            the world. Circles under $800,000 are omitted so the map stays readable. The country is the origin
-            recorded by customs, which is usually where the instrument was made or last shipped from, not the
-            brand on the headstock.
-            <a href="specs/12-symbol-origins.vl.json">Vega-Lite JSON</a>
+            Figure 10. Proportional symbol map, the second map. Equal Earth projection. Circles under
+            $1 million are omitted. The country is the origin recorded by customs, which is usually where the
+            instrument was made or last shipped from, not the brand on the headstock. Hover for the largest
+            instrument family on that route: Japan and Germany are piano routes, the United States is an
+            electric-guitar route, Malaysia is keyboards.
+            <a href="specs/07-symbols.vl.json">Vega-Lite JSON</a>
           </p>
           <p>
-            The same eight large origins are drawn again as flows into Australia. The width is the same value as
-            the circles. The curves are there so the lines can be separated; they are not shipping lanes. Colour
-            shows the largest family on that route, which is where the specialisation appears: Japan and Germany
-            are piano routes, the United States and Mexico are electric-guitar routes, Malaysia is keyboards.
+            Drawn again, the six large origins become lines into Australia. Width is the same value as the
+            circles. Colour is the largest family on that route, which is where the specialisation shows:
+            Japan and Germany are piano routes, the United States is an electric-guitar route, and Malaysia
+            is keyboards. China’s line is coloured as electric guitars because that is its largest slice,
+            about a quarter of the value. The rest is spread across other families.
           </p>
-          <div class="chart" id="chart-flows"></div>
+          <div class="chart" id="chart-flows" role="img" aria-label="Flow map of instrument imports into Australia in 2024."></div>
           <p class="caption">
-            Figure 13. Flow map, the third map idiom. Equal Earth again. Width is 2024 import value.
-            <a href="specs/13-flow-origins.vl.json">Vega-Lite JSON</a>
-          </p>
-          <p>
-            The grid makes the specialisation exact. Each row is one origin and adds to about 100 percent of what
-            that origin shipped to Australia. Japan’s row is 62 percent acoustic pianos. The United States is
-            57 percent electric guitars. Malaysia is 62 percent electric keyboards, and almost all the rest is
-            electric guitars. China’s row has no cell above 25 percent: it ships a bit of everything, which is why
-            it can be the largest supplier without being the leader of any one family. Hong Kong’s row is
-            93 percent bowed strings. Treat that carefully. Hong Kong is a port as well as a place of manufacture,
-            so many of those violins may have been made somewhere else and shipped on.
-          </p>
-          <div class="chart" id="chart-mix"></div>
-          <p class="caption">
-            Figure 14. Heatmap. The number is the percent of that country’s shipments. Shares under 10 percent are
-            left blank so the specialisations can be seen.
-            <a href="specs/14-heatmap-origins.vl.json">Vega-Lite JSON</a>
+            Figure 11. Flow map, the third map. Equal Earth again. Only origins of $8 million or more are drawn,
+            so the six lines stay readable.
+            <a href="specs/11-flow.vl.json">Vega-Lite JSON</a>
           </p>
         </div>
       </section>
@@ -343,28 +265,17 @@
       <section class="chapter" id="reading">
         <p class="num">08</p>
         <div>
-          <h2>What to take from the two records</h2>
-          <p>
-            The survey and the customs forms do not measure the same thing, and together they still answer the
-            question a parent or a student actually has.
-          </p>
+          <h2>What the two records say together</h2>
           <p>
             Playing an instrument, or singing in a counted setting, is a childhood activity with a clear age: the
             middle of primary school. It became a little less common between the two surveys, in step with most
             other creative activities, while craft held its ground. People who keep playing into adulthood are a
-            small group, slightly more often men, and they are rarely paid.
+            small group.
           </p>
           <p>
-            When children do play, the usual pattern is a lesson and a short practice, kept up over the year rather
-            than done in a burst. The instruments the country now spends the most money importing are not the
-            acoustic piano of 2015. They are electric guitars and electric keyboards, built up through the pandemic
-            years and still on top in 2024. The expensive acoustic instruments are still there, in smaller numbers:
-            a little over a thousand grand pianos a year, mostly from Japan and Germany.
-          </p>
-          <p>
-            None of this says a child should choose a guitar over a piano. It says the old picture, of a piano in
-            the front room as the normal way Australians learn, is no longer what the shipments show, and that the
-            habit of playing is still formed young, then mostly set down.
+            When children do play, the usual pattern is a lesson and a short practice. The instruments the country
+            now spends the most money importing are not the acoustic piano of 2015. They are electric guitars and
+            electric keyboards, and they arrive from a short list of countries.
           </p>
 
           <h3>Domain, reader, purpose</h3>
@@ -374,77 +285,43 @@
           </p>
           <p>
             <strong>Who.</strong> A general reader in Australia. No statistical training is assumed. “Margin of
-            error” is explained once, in ordinary language, where it changes what the map is allowed to claim.
+            error” is explained in ordinary language where it changes what a chart is allowed to claim.
           </p>
           <p>
-            <strong>Why.</strong> A parent, a student or a curious adult cannot see, from a shop or a school
-            newsletter, whether children still learn instruments, or whether the piano is still the instrument the
-            country invests in. Those facts sit in a household survey and a trade database. This page puts them in
-            one order.
+            <strong>Why.</strong> A parent or a student cannot see, from a shop or a school newsletter, whether
+            children still learn instruments, or whether the piano is still the instrument the country invests in.
           </p>
           <p>
-            <strong>What.</strong> Two sources, both public, neither altered.
-          </p>
-          <p>
-            Australian Bureau of Statistics, <em>Cultural and creative activities, 2021–22</em>, released 21 April
-            2023. Tables 4, 5, 9, 10, 13 and 22, plus the 2017–18 comparison published in that release.
+            <strong>What.</strong> Two public sources, neither altered. Australian Bureau of Statistics,
+            <em>Cultural and creative activities, 2021–22</em>, released 21 April 2023, including the 2017–18
+            comparison in that release.
             <a href="https://www.abs.gov.au/statistics/people/people-and-communities/cultural-and-creative-activities/latest-release">abs.gov.au</a>.
-            The child question covers practice, lessons and performance outside school, and excludes informal
-            singing at home. The adult question excludes karaoke.
-          </p>
-          <p>
-            United Nations Comtrade, Australia’s reported imports of HS 2017 headings 920110 to 920790, years 2015
-            to 2024. Values are the primary value in US dollars. Retrieved from the UN Comtrade preview API,
-            September 2026.
+            United Nations Comtrade, Australia’s reported imports of pianos, strings, wind, percussion and
+            electric instruments, 2015 to 2024. Values are in US dollars.
             <a href="https://comtradeplus.un.org/">comtradeplus.un.org</a>.
-            Headings follow the Harmonized System: upright and grand pianos, other acoustic keyboard strings,
-            bowed strings, other acoustic strings (mostly guitars), brass, other wind, percussion, electric
-            keyboards, and other electric instruments (mostly guitars). Parts, musical boxes and toy-like residual
-            categories are not treated as a family of their own. A tiny “other acoustic keyboards” heading, with a
-            very low price per item, is folded into acoustic pianos and is not described as harpsichords.
           </p>
 
           <h3>How the pictures were chosen</h3>
-          <p>
-            The page is a story with fourteen pictures. A line chart is used once, for a rate across age, because
-            that is the clearest picture of a fall and a flattening. The other pictures are there because a bar
-            would have hidden the comparison the reader needs. Three of them are maps, each a different idiom, each
-            with a projection chosen for the question.
-          </p>
           <ol class="idioms">
-            <li><strong>Isotype.</strong> <span>Turns 19.3 percent into a count a reader can see without a scale.</span></li>
-            <li><strong>Slope chart.</strong> <span>Two survey years, six activities. The task is “what moved, and what held still?”</span></li>
-            <li><strong>Heatmap, age by activity.</strong> <span>Shows that music’s age shape is not the same as craft, dance or digital making.</span></li>
-            <li><strong>Line chart, small multiple.</strong> <span>Adult playing and music-writing by age and sex, on one scale. A basic idiom, used because the task is a rate across ordered ages.</span></li>
-            <li><strong>Sankey.</strong> <span>Keeps the base of the story visible: most children never enter the stream, and most who do take lessons.</span></li>
-            <li><strong>Marimekko.</strong> <span>Column width is lessons or not. Height is the kind of year. One picture, two questions.</span></li>
-            <li><strong>Nightingale rose.</strong> <span>Weekly hours. Equal angles stop a reader mistaking the picture for a pie chart of time.</span></li>
-            <li><strong>Choropleth.</strong> <span>A rate by state. Conic equal-area, so Western Australia is not exaggerated. Raw counts are not coloured, because big states would win for being big.</span></li>
-            <li><strong>Bump chart.</strong> <span>Rank of each instrument family, 2015 to 2024. The crossing in 2019 is the event.</span></li>
-            <li><strong>Waterfall.</strong> <span>Turns those rank changes back into dollars, so a small family that leaps in rank cannot look like the whole story.</span></li>
-            <li><strong>Treemap.</strong> <span>The 2024 bill as areas. Comparing eight amounts that differ by a factor of ten.</span></li>
-            <li><strong>Proportional symbol map.</strong> <span>Import value by origin. Equal Earth. Area of the circle encodes dollars. Country area is not the data.</span></li>
-            <li><strong>Flow map.</strong> <span>The same origins drawn as routes into Australia, width for value, colour for the main family. Schematic curves, not sea routes.</span></li>
-            <li><strong>Heatmap, origin by family.</strong> <span>Each country’s mix. This is the picture that shows Japan’s pianos and China’s spread.</span></li>
+            <li><strong>Isotype.</strong> Turns 19.3 percent into a count that can be seen without a scale.</li>
+            <li><strong>Slope chart.</strong> Two survey years, six activities. The task is “what moved, and what held still?”</li>
+            <li><strong>Heatmap.</strong> Music’s age shape is not the same as craft, dance or digital making.</li>
+            <li><strong>Line chart.</strong> A rate across ordered adult ages. A basic idiom, used because that is the comparison.</li>
+            <li><strong>Marimekko.</strong> Column width is lessons or not. Height is the kind of year.</li>
+            <li><strong>Choropleth.</strong> A rate by state. Conic equal-area, so area stays comparable. Counts are not coloured, because big states would win for being big.</li>
+            <li><strong>Bump chart.</strong> Rank of each instrument family, 2015 to 2024. The crossing in 2019 is the event.</li>
+            <li><strong>Waterfall.</strong> Turns those rank changes back into dollars.</li>
+            <li><strong>Treemap.</strong> The 2024 bill as areas, so a family that ranks high on a small amount cannot look like the whole story.</li>
+            <li><strong>Proportional symbol map.</strong> Import value by origin. Equal Earth. Area of the circle encodes dollars.</li>
+            <li><strong>Flow map.</strong> The same origins as routes into Australia. Width is value. The lines are schematic, not shipping lanes.</li>
           </ol>
           <p>
-            Hover is used where the printed number would crowd the picture: margins of error, exact dollars, the
-            smaller cells. Clicking a legend item is used only on the slope chart and the bump chart, where one
-            line among many is the thing a reader wants to trace. Nothing on the page swaps out a section.
-          </p>
-
-          <h3>Reproducibility and assistance</h3>
-          <p>
-            Chart specifications are the JSON files linked under each figure. The tidy data behind them is in
-            <code>data/</code>. The Comtrade extract and the script that builds the chart files are in the
-            repository. ABS cells used here are transcribed from the published workbooks and named by table in
-            <code>scripts/prepare_data.py</code>.
+            Hover is used where a printed number would crowd the picture. Clicking a legend item is used only
+            where one line among many is the thing a reader wants to trace. Nothing on the page swaps out a section.
           </p>
           <p>
-            Text, page design, chart specifications and the data-preparation code were drafted with an AI coding
-            assistant (Cursor, Grok 4.7). The figures were taken from the sources named above and checked against
-            those tables. They were not invented. A hand-drawn studio sketch, if it is submitted for the sketch
-            mark, has to be drawn by hand: the unit gives that mark a zero when the sketch is made with digital tools.
+            The chart descriptions are the Vega-Lite files linked under each figure. The numbers were taken from
+            the sources above.
           </p>
         </div>
       </section>
@@ -457,6 +334,7 @@
           Australian Bureau of Statistics. Cultural and creative activities, 2021–22 financial year. Released
           21 April 2023.
           <a href="https://www.abs.gov.au/statistics/people/people-and-communities/cultural-and-creative-activities/latest-release">Publication and data cubes</a>.
+          The 2017–18 comparison is published in that release. Tables used: 4, 9, 13 and 22.
         </p>
         <p>
           United Nations Statistics Division. UN Comtrade, Harmonized System imports reported by Australia,
@@ -465,15 +343,13 @@
         </p>
         <p>
           Coastlines: Natural Earth, via the world-atlas TopoJSON (110m), and a public GeoJSON of Australian
-          states and territories simplified for this page.
+          states and territories.
         </p>
         <p>
-          Charts are drawn with
-          <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>
-          and, for the treemap,
-          <a href="https://vega.github.io/vega/">Vega</a>.
+          Charts are drawn with <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>.
           Typefaces: Fraunces and Source Sans 3, from Google Fonts.
         </p>
+        <p>liiganghah · 14 October 2026</p>
       </div>
     </footer>
     <script type="module" src="src/main.js"></script>
