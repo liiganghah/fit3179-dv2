@@ -1,0 +1,602 @@
+[
+ {
+  "partner": "China",
+  "iso3": "CHN",
+  "usd_million": 37.31,
+  "value_usd": 37305249,
+  "lon": 103.453,
+  "lat": 36.683,
+  "top_family": "Electric guitars",
+  "top_share": 25
+ },
+ {
+  "partner": "USA",
+  "iso3": "USA",
+  "usd_million": 24.53,
+  "value_usd": 24532918,
+  "lon": -103.573,
+  "lat": 44.756,
+  "top_family": "Electric guitars",
+  "top_share": 57
+ },
+ {
+  "partner": "Japan",
+  "iso3": "JPN",
+  "usd_million": 21.57,
+  "value_usd": 21567721,
+  "lon": 137.712,
+  "lat": 37.537,
+  "top_family": "Acoustic pianos",
+  "top_share": 62
+ },
+ {
+  "partner": "Indonesia",
+  "iso3": "IDN",
+  "usd_million": 17.63,
+  "value_usd": 17628656,
+  "lon": 117.365,
+  "lat": -2.272,
+  "top_family": "Electric guitars",
+  "top_share": 31
+ },
+ {
+  "partner": "Germany",
+  "iso3": "DEU",
+  "usd_million": 8.15,
+  "value_usd": 8150871,
+  "lon": 10.27,
+  "lat": 51.077,
+  "top_family": "Acoustic pianos",
+  "top_share": 57
+ },
+ {
+  "partner": "Malaysia",
+  "iso3": "MYS",
+  "usd_million": 8.1,
+  "value_usd": 8095485,
+  "lon": 109.7,
+  "lat": 3.746,
+  "top_family": "Electric keyboards",
+  "top_share": 62
+ },
+ {
+  "partner": "Mexico",
+  "iso3": "MEX",
+  "usd_million": 4.62,
+  "value_usd": 4620715,
+  "lon": -102.223,
+  "lat": 23.913,
+  "top_family": "Electric guitars",
+  "top_share": 69
+ },
+ {
+  "partner": "United Kingdom",
+  "iso3": "GBR",
+  "usd_million": 1.9,
+  "value_usd": 1903211,
+  "lon": -2.76,
+  "lat": 53.809,
+  "top_family": "Percussion",
+  "top_share": 27
+ },
+ {
+  "partner": "Italy",
+  "iso3": "ITA",
+  "usd_million": 1.3,
+  "value_usd": 1303395,
+  "lon": 12.269,
+  "lat": 42.671,
+  "top_family": "Electric keyboards",
+  "top_share": 34
+ },
+ {
+  "partner": "Rep. of Korea",
+  "iso3": "KOR",
+  "usd_million": 1.22,
+  "value_usd": 1219336,
+  "lon": 127.82,
+  "lat": 36.419,
+  "top_family": "Electric guitars",
+  "top_share": 88
+ },
+ {
+  "partner": "Viet Nam",
+  "iso3": "VNM",
+  "usd_million": 0.93,
+  "value_usd": 934091,
+  "lon": 106.333,
+  "lat": 16.556,
+  "top_family": "Electric keyboards",
+  "top_share": 56
+ },
+ {
+  "partner": "Czechia",
+  "iso3": "CZE",
+  "usd_million": 0.93,
+  "value_usd": 927749,
+  "lon": 15.343,
+  "lat": 49.78,
+  "top_family": "Acoustic pianos",
+  "top_share": 68
+ },
+ {
+  "partner": "Netherlands",
+  "iso3": "NLD",
+  "usd_million": 0.76,
+  "value_usd": 761325,
+  "lon": 5.5,
+  "lat": 52.293,
+  "top_family": "Percussion",
+  "top_share": 50
+ },
+ {
+  "partner": "Poland",
+  "iso3": "POL",
+  "usd_million": 0.68,
+  "value_usd": 681310,
+  "lon": 19.344,
+  "lat": 52.134,
+  "top_family": "Electric keyboards",
+  "top_share": 60
+ },
+ {
+  "partner": "Spain",
+  "iso3": "ESP",
+  "usd_million": 0.51,
+  "value_usd": 507064,
+  "lon": -3.624,
+  "lat": 40.321,
+  "top_family": "Acoustic guitars",
+  "top_share": 64
+ },
+ {
+  "partner": "Sweden",
+  "iso3": "SWE",
+  "usd_million": 0.46,
+  "value_usd": 463782,
+  "lon": 16.109,
+  "lat": 62.419,
+  "top_family": "Electric keyboards",
+  "top_share": 94
+ },
+ {
+  "partner": "Canada",
+  "iso3": "CAN",
+  "usd_million": 0.42,
+  "value_usd": 415970,
+  "lon": -96.396,
+  "lat": 60.477,
+  "top_family": "Percussion",
+  "top_share": 61
+ },
+ {
+  "partner": "Türkiye",
+  "iso3": "TUR",
+  "usd_million": 0.31,
+  "value_usd": 314237,
+  "lon": 35.117,
+  "lat": 39.145,
+  "top_family": "Percussion",
+  "top_share": 58
+ },
+ {
+  "partner": "Thailand",
+  "iso3": "THA",
+  "usd_million": 0.28,
+  "value_usd": 277102,
+  "lon": 101.002,
+  "lat": 14.981,
+  "top_family": "Percussion",
+  "top_share": 95
+ },
+ {
+  "partner": "Romania",
+  "iso3": "ROU",
+  "usd_million": 0.2,
+  "value_usd": 202007,
+  "lon": 24.954,
+  "lat": 45.853,
+  "top_family": "Bowed strings",
+  "top_share": 100
+ },
+ {
+  "partner": "New Zealand",
+  "iso3": "NZL",
+  "usd_million": 0.1,
+  "value_usd": 104389,
+  "lon": 172.951,
+  "lat": -41.551,
+  "top_family": "Acoustic guitars",
+  "top_share": 50
+ },
+ {
+  "partner": "Latvia",
+  "iso3": "LVA",
+  "usd_million": 0.08,
+  "value_usd": 83020,
+  "lon": 24.839,
+  "lat": 56.817,
+  "top_family": "Electric keyboards",
+  "top_share": 100
+ },
+ {
+  "partner": "Israel",
+  "iso3": "ISR",
+  "usd_million": 0.06,
+  "value_usd": 61197,
+  "lon": 35.001,
+  "lat": 31.479,
+  "top_family": "Other wind",
+  "top_share": 56
+ },
+ {
+  "partner": "Ireland",
+  "iso3": "IRL",
+  "usd_million": 0.04,
+  "value_usd": 43419,
+  "lon": -8.017,
+  "lat": 53.172,
+  "top_family": "Acoustic guitars",
+  "top_share": 43
+ },
+ {
+  "partner": "Denmark",
+  "iso3": "DNK",
+  "usd_million": 0.04,
+  "value_usd": 40790,
+  "lon": 9.886,
+  "lat": 56.059,
+  "top_family": "Electric guitars",
+  "top_share": 78
+ },
+ {
+  "partner": "Nepal",
+  "iso3": "NPL",
+  "usd_million": 0.04,
+  "value_usd": 36562,
+  "lon": 84.043,
+  "lat": 28.249,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "Finland",
+  "iso3": "FIN",
+  "usd_million": 0.04,
+  "value_usd": 35975,
+  "lon": 26.142,
+  "lat": 64.261,
+  "top_family": "Electric guitars",
+  "top_share": 67
+ },
+ {
+  "partner": "Serbia",
+  "iso3": "SRB",
+  "usd_million": 0.03,
+  "value_usd": 34400,
+  "lon": 20.837,
+  "lat": 44.223,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "Pakistan",
+  "iso3": "PAK",
+  "usd_million": 0.03,
+  "value_usd": 31334,
+  "lon": 69.235,
+  "lat": 29.908,
+  "top_family": "Acoustic guitars",
+  "top_share": 69
+ },
+ {
+  "partner": "Greece",
+  "iso3": "GRC",
+  "usd_million": 0.03,
+  "value_usd": 29258,
+  "lon": 22.72,
+  "lat": 39.037,
+  "top_family": "Acoustic guitars",
+  "top_share": 66
+ },
+ {
+  "partner": "Philippines",
+  "iso3": "PHL",
+  "usd_million": 0.03,
+  "value_usd": 27010,
+  "lon": 122.938,
+  "lat": 11.72,
+  "top_family": "Electric keyboards",
+  "top_share": 68
+ },
+ {
+  "partner": "Slovenia",
+  "iso3": "SVN",
+  "usd_million": 0.02,
+  "value_usd": 16342,
+  "lon": 14.934,
+  "lat": 46.126,
+  "top_family": "Electric guitars",
+  "top_share": 56
+ },
+ {
+  "partner": "Lithuania",
+  "iso3": "LTU",
+  "usd_million": 0.02,
+  "value_usd": 15832,
+  "lon": 23.888,
+  "lat": 55.283,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "United Arab Emirates",
+  "iso3": "ARE",
+  "usd_million": 0.02,
+  "value_usd": 15529,
+  "lon": 54.2,
+  "lat": 23.871,
+  "top_family": "Electric guitars",
+  "top_share": 72
+ },
+ {
+  "partner": "Slovakia",
+  "iso3": "SVK",
+  "usd_million": 0.01,
+  "value_usd": 14440,
+  "lon": 19.498,
+  "lat": 48.733,
+  "top_family": "Acoustic guitars",
+  "top_share": 95
+ },
+ {
+  "partner": "Portugal",
+  "iso3": "PRT",
+  "usd_million": 0.01,
+  "value_usd": 13954,
+  "lon": -8.061,
+  "lat": 39.607,
+  "top_family": "Electric keyboards",
+  "top_share": 50
+ },
+ {
+  "partner": "Bulgaria",
+  "iso3": "BGR",
+  "usd_million": 0.01,
+  "value_usd": 13614,
+  "lon": 25.188,
+  "lat": 42.756,
+  "top_family": "Bowed strings",
+  "top_share": 100
+ },
+ {
+  "partner": "South Africa",
+  "iso3": "ZAF",
+  "usd_million": 0.01,
+  "value_usd": 13321,
+  "lon": 25.158,
+  "lat": -28.923,
+  "top_family": "Electric guitars",
+  "top_share": 39
+ },
+ {
+  "partner": "Hungary",
+  "iso3": "HUN",
+  "usd_million": 0.01,
+  "value_usd": 8016,
+  "lon": 19.343,
+  "lat": 47.204,
+  "top_family": "Electric guitars",
+  "top_share": 67
+ },
+ {
+  "partner": "Estonia",
+  "iso3": "EST",
+  "usd_million": 0.01,
+  "value_usd": 7140,
+  "lon": 25.831,
+  "lat": 58.641,
+  "top_family": "Electric keyboards",
+  "top_share": 100
+ },
+ {
+  "partner": "Guinea",
+  "iso3": "GIN",
+  "usd_million": 0.01,
+  "value_usd": 6110,
+  "lon": -11.055,
+  "lat": 10.45,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "Mozambique",
+  "iso3": "MOZ",
+  "usd_million": 0.01,
+  "value_usd": 5909,
+  "lon": 35.542,
+  "lat": -17.154,
+  "top_family": "Other wind",
+  "top_share": 100
+ },
+ {
+  "partner": "Egypt",
+  "iso3": "EGY",
+  "usd_million": 0.0,
+  "value_usd": 3831,
+  "lon": 29.861,
+  "lat": 26.475,
+  "top_family": "Percussion",
+  "top_share": 57
+ },
+ {
+  "partner": "Uruguay",
+  "iso3": "URY",
+  "usd_million": 0.0,
+  "value_usd": 3821,
+  "lon": -56.01,
+  "lat": -32.774,
+  "top_family": "Electric guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Chile",
+  "iso3": "CHL",
+  "usd_million": 0.0,
+  "value_usd": 3380,
+  "lon": -71.178,
+  "lat": -37.311,
+  "top_family": "Acoustic pianos",
+  "top_share": 51
+ },
+ {
+  "partner": "Lebanon",
+  "iso3": "LBN",
+  "usd_million": 0.0,
+  "value_usd": 2851,
+  "lon": 35.868,
+  "lat": 33.91,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "Fiji",
+  "iso3": "FJI",
+  "usd_million": 0.0,
+  "value_usd": 2779,
+  "lon": 178.569,
+  "lat": -17.315,
+  "top_family": "Percussion",
+  "top_share": 71
+ },
+ {
+  "partner": "Sri Lanka",
+  "iso3": "LKA",
+  "usd_million": 0.0,
+  "value_usd": 1861,
+  "lon": 80.668,
+  "lat": 7.7,
+  "top_family": "Acoustic pianos",
+  "top_share": 100
+ },
+ {
+  "partner": "Cyprus",
+  "iso3": "CYP",
+  "usd_million": 0.0,
+  "value_usd": 1836,
+  "lon": 33.039,
+  "lat": 34.907,
+  "top_family": "Electric guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Trinidad and Tobago",
+  "iso3": "TTO",
+  "usd_million": 0.0,
+  "value_usd": 1832,
+  "lon": -61.331,
+  "lat": 10.428,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "Ukraine",
+  "iso3": "UKR",
+  "usd_million": 0.0,
+  "value_usd": 1432,
+  "lon": 31.292,
+  "lat": 49.187,
+  "top_family": "Electric guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Syria",
+  "iso3": "SYR",
+  "usd_million": 0.0,
+  "value_usd": 1192,
+  "lon": 38.523,
+  "lat": 35.009,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "Papua New Guinea",
+  "iso3": "PNG",
+  "usd_million": 0.0,
+  "value_usd": 1188,
+  "lon": 145.313,
+  "lat": -6.457,
+  "top_family": "Percussion",
+  "top_share": 100
+ },
+ {
+  "partner": "Kazakhstan",
+  "iso3": "KAZ",
+  "usd_million": 0.0,
+  "value_usd": 1028,
+  "lon": 67.236,
+  "lat": 48.406,
+  "top_family": "Electric keyboards",
+  "top_share": 100
+ },
+ {
+  "partner": "Namibia",
+  "iso3": "NAM",
+  "usd_million": 0.0,
+  "value_usd": 951,
+  "lon": 17.142,
+  "lat": -22.04,
+  "top_family": "Electric guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Paraguay",
+  "iso3": "PRY",
+  "usd_million": 0.0,
+  "value_usd": 901,
+  "lon": -58.432,
+  "lat": -23.23,
+  "top_family": "Acoustic guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Iran",
+  "iso3": "IRN",
+  "usd_million": 0.0,
+  "value_usd": 883,
+  "lon": 54.453,
+  "lat": 32.474,
+  "top_family": "Acoustic guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Russian Federation",
+  "iso3": "RUS",
+  "usd_million": 0.0,
+  "value_usd": 802,
+  "lon": 95.785,
+  "lat": 66.068,
+  "top_family": "Electric guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Uganda",
+  "iso3": "UGA",
+  "usd_million": 0.0,
+  "value_usd": 796,
+  "lon": 32.357,
+  "lat": 1.295,
+  "top_family": "Acoustic guitars",
+  "top_share": 100
+ },
+ {
+  "partner": "Nicaragua",
+  "iso3": "NIC",
+  "usd_million": 0.0,
+  "value_usd": 789,
+  "lon": -85.021,
+  "lat": 12.847,
+  "top_family": "Electric guitars",
+  "top_share": 100
+ }
+]

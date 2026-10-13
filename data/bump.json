@@ -1,0 +1,482 @@
+[
+ {
+  "year": 2015,
+  "family": "Acoustic pianos",
+  "rank": 1,
+  "usd_million": 20.8
+ },
+ {
+  "year": 2015,
+  "family": "Electric guitars",
+  "rank": 2,
+  "usd_million": 20.5
+ },
+ {
+  "year": 2015,
+  "family": "Electric keyboards",
+  "rank": 3,
+  "usd_million": 20.1
+ },
+ {
+  "year": 2015,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 19.3
+ },
+ {
+  "year": 2015,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 12.3
+ },
+ {
+  "year": 2015,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 10.7
+ },
+ {
+  "year": 2015,
+  "family": "Brass",
+  "rank": 7,
+  "usd_million": 4.7
+ },
+ {
+  "year": 2015,
+  "family": "Bowed strings",
+  "rank": 8,
+  "usd_million": 3.5
+ },
+ {
+  "year": 2016,
+  "family": "Acoustic pianos",
+  "rank": 1,
+  "usd_million": 28.3
+ },
+ {
+  "year": 2016,
+  "family": "Electric keyboards",
+  "rank": 2,
+  "usd_million": 21.5
+ },
+ {
+  "year": 2016,
+  "family": "Electric guitars",
+  "rank": 3,
+  "usd_million": 20.5
+ },
+ {
+  "year": 2016,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 18.2
+ },
+ {
+  "year": 2016,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 10.9
+ },
+ {
+  "year": 2016,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 10.4
+ },
+ {
+  "year": 2016,
+  "family": "Brass",
+  "rank": 7,
+  "usd_million": 4.5
+ },
+ {
+  "year": 2016,
+  "family": "Bowed strings",
+  "rank": 8,
+  "usd_million": 3.2
+ },
+ {
+  "year": 2017,
+  "family": "Acoustic pianos",
+  "rank": 1,
+  "usd_million": 29.4
+ },
+ {
+  "year": 2017,
+  "family": "Electric keyboards",
+  "rank": 2,
+  "usd_million": 24.9
+ },
+ {
+  "year": 2017,
+  "family": "Electric guitars",
+  "rank": 3,
+  "usd_million": 21.6
+ },
+ {
+  "year": 2017,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 16.8
+ },
+ {
+  "year": 2017,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 11.0
+ },
+ {
+  "year": 2017,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 10.0
+ },
+ {
+  "year": 2017,
+  "family": "Brass",
+  "rank": 7,
+  "usd_million": 4.9
+ },
+ {
+  "year": 2017,
+  "family": "Bowed strings",
+  "rank": 8,
+  "usd_million": 4.6
+ },
+ {
+  "year": 2018,
+  "family": "Acoustic pianos",
+  "rank": 1,
+  "usd_million": 29.7
+ },
+ {
+  "year": 2018,
+  "family": "Electric keyboards",
+  "rank": 2,
+  "usd_million": 26.7
+ },
+ {
+  "year": 2018,
+  "family": "Electric guitars",
+  "rank": 3,
+  "usd_million": 24.3
+ },
+ {
+  "year": 2018,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 17.7
+ },
+ {
+  "year": 2018,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 10.5
+ },
+ {
+  "year": 2018,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 9.2
+ },
+ {
+  "year": 2018,
+  "family": "Brass",
+  "rank": 7,
+  "usd_million": 4.7
+ },
+ {
+  "year": 2018,
+  "family": "Bowed strings",
+  "rank": 8,
+  "usd_million": 4.6
+ },
+ {
+  "year": 2019,
+  "family": "Electric guitars",
+  "rank": 1,
+  "usd_million": 29.5
+ },
+ {
+  "year": 2019,
+  "family": "Acoustic pianos",
+  "rank": 2,
+  "usd_million": 28.1
+ },
+ {
+  "year": 2019,
+  "family": "Electric keyboards",
+  "rank": 3,
+  "usd_million": 28.0
+ },
+ {
+  "year": 2019,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 18.0
+ },
+ {
+  "year": 2019,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 11.9
+ },
+ {
+  "year": 2019,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 10.5
+ },
+ {
+  "year": 2019,
+  "family": "Bowed strings",
+  "rank": 7,
+  "usd_million": 6.3
+ },
+ {
+  "year": 2019,
+  "family": "Brass",
+  "rank": 8,
+  "usd_million": 5.1
+ },
+ {
+  "year": 2020,
+  "family": "Electric guitars",
+  "rank": 1,
+  "usd_million": 32.3
+ },
+ {
+  "year": 2020,
+  "family": "Electric keyboards",
+  "rank": 2,
+  "usd_million": 30.7
+ },
+ {
+  "year": 2020,
+  "family": "Acoustic guitars",
+  "rank": 3,
+  "usd_million": 27.9
+ },
+ {
+  "year": 2020,
+  "family": "Acoustic pianos",
+  "rank": 4,
+  "usd_million": 24.2
+ },
+ {
+  "year": 2020,
+  "family": "Percussion",
+  "rank": 5,
+  "usd_million": 10.2
+ },
+ {
+  "year": 2020,
+  "family": "Other wind",
+  "rank": 6,
+  "usd_million": 9.5
+ },
+ {
+  "year": 2020,
+  "family": "Bowed strings",
+  "rank": 7,
+  "usd_million": 4.9
+ },
+ {
+  "year": 2020,
+  "family": "Brass",
+  "rank": 8,
+  "usd_million": 3.7
+ },
+ {
+  "year": 2021,
+  "family": "Electric guitars",
+  "rank": 1,
+  "usd_million": 54.0
+ },
+ {
+  "year": 2021,
+  "family": "Electric keyboards",
+  "rank": 2,
+  "usd_million": 34.5
+ },
+ {
+  "year": 2021,
+  "family": "Acoustic pianos",
+  "rank": 3,
+  "usd_million": 34.4
+ },
+ {
+  "year": 2021,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 29.0
+ },
+ {
+  "year": 2021,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 13.6
+ },
+ {
+  "year": 2021,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 13.5
+ },
+ {
+  "year": 2021,
+  "family": "Bowed strings",
+  "rank": 7,
+  "usd_million": 6.0
+ },
+ {
+  "year": 2021,
+  "family": "Brass",
+  "rank": 8,
+  "usd_million": 4.8
+ },
+ {
+  "year": 2022,
+  "family": "Electric guitars",
+  "rank": 1,
+  "usd_million": 58.1
+ },
+ {
+  "year": 2022,
+  "family": "Acoustic pianos",
+  "rank": 2,
+  "usd_million": 39.5
+ },
+ {
+  "year": 2022,
+  "family": "Electric keyboards",
+  "rank": 3,
+  "usd_million": 37.5
+ },
+ {
+  "year": 2022,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 24.2
+ },
+ {
+  "year": 2022,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 13.6
+ },
+ {
+  "year": 2022,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 12.7
+ },
+ {
+  "year": 2022,
+  "family": "Bowed strings",
+  "rank": 7,
+  "usd_million": 9.0
+ },
+ {
+  "year": 2022,
+  "family": "Brass",
+  "rank": 8,
+  "usd_million": 5.3
+ },
+ {
+  "year": 2023,
+  "family": "Electric guitars",
+  "rank": 1,
+  "usd_million": 39.9
+ },
+ {
+  "year": 2023,
+  "family": "Acoustic pianos",
+  "rank": 2,
+  "usd_million": 33.0
+ },
+ {
+  "year": 2023,
+  "family": "Electric keyboards",
+  "rank": 3,
+  "usd_million": 30.2
+ },
+ {
+  "year": 2023,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 16.3
+ },
+ {
+  "year": 2023,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 12.9
+ },
+ {
+  "year": 2023,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 11.2
+ },
+ {
+  "year": 2023,
+  "family": "Bowed strings",
+  "rank": 7,
+  "usd_million": 5.9
+ },
+ {
+  "year": 2023,
+  "family": "Brass",
+  "rank": 8,
+  "usd_million": 4.6
+ },
+ {
+  "year": 2024,
+  "family": "Electric guitars",
+  "rank": 1,
+  "usd_million": 40.0
+ },
+ {
+  "year": 2024,
+  "family": "Electric keyboards",
+  "rank": 2,
+  "usd_million": 24.4
+ },
+ {
+  "year": 2024,
+  "family": "Acoustic pianos",
+  "rank": 3,
+  "usd_million": 22.7
+ },
+ {
+  "year": 2024,
+  "family": "Acoustic guitars",
+  "rank": 4,
+  "usd_million": 18.4
+ },
+ {
+  "year": 2024,
+  "family": "Other wind",
+  "rank": 5,
+  "usd_million": 13.3
+ },
+ {
+  "year": 2024,
+  "family": "Percussion",
+  "rank": 6,
+  "usd_million": 10.7
+ },
+ {
+  "year": 2024,
+  "family": "Bowed strings",
+  "rank": 7,
+  "usd_million": 6.9
+ },
+ {
+  "year": 2024,
+  "family": "Brass",
+  "rank": 8,
+  "usd_million": 4.5
+ }
+]

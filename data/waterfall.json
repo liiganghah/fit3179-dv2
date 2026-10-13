@@ -1,0 +1,11 @@
+[
+  {"step": "2015", "kind": "Total", "low": 0, "high": 111.9, "label": "$112m"},
+  {"step": "Electric guitars", "kind": "Rise", "low": 111.9, "high": 131.4, "label": "+19.5"},
+  {"step": "Electric keyboards", "kind": "Rise", "low": 131.4, "high": 135.7, "label": "+4.3"},
+  {"step": "Bowed strings", "kind": "Rise", "low": 135.7, "high": 139.1, "label": "+3.4"},
+  {"step": "Acoustic pianos", "kind": "Rise", "low": 139.1, "high": 141.0, "label": "+1.9"},
+  {"step": "Other wind", "kind": "Rise", "low": 141.0, "high": 142.0, "label": "+1.0"},
+  {"step": "Brass", "kind": "Fall", "low": 141.8, "high": 142.0, "label": "−0.2"},
+  {"step": "Acoustic guitars", "kind": "Fall", "low": 140.9, "high": 141.8, "label": "−0.9"},
+  {"step": "2024", "kind": "Total", "low": 0, "high": 140.9, "label": "$141m"}
+]

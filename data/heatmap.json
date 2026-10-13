@@ -1,0 +1,92 @@
+[
+ {
+  "activity": "Drama",
+  "age": "5–8 years",
+  "pct": 4.6
+ },
+ {
+  "activity": "Drama",
+  "age": "9–11 years",
+  "pct": 5.1
+ },
+ {
+  "activity": "Drama",
+  "age": "12–14 years",
+  "pct": 5.1
+ },
+ {
+  "activity": "Singing or playing",
+  "age": "5–8 years",
+  "pct": 16.1
+ },
+ {
+  "activity": "Singing or playing",
+  "age": "9–11 years",
+  "pct": 23.8
+ },
+ {
+  "activity": "Singing or playing",
+  "age": "12–14 years",
+  "pct": 19.0
+ },
+ {
+  "activity": "Dancing",
+  "age": "5–8 years",
+  "pct": 15.5
+ },
+ {
+  "activity": "Dancing",
+  "age": "9–11 years",
+  "pct": 12.9
+ },
+ {
+  "activity": "Dancing",
+  "age": "12–14 years",
+  "pct": 9.9
+ },
+ {
+  "activity": "Art and craft",
+  "age": "5–8 years",
+  "pct": 45.5
+ },
+ {
+  "activity": "Art and craft",
+  "age": "9–11 years",
+  "pct": 39.2
+ },
+ {
+  "activity": "Art and craft",
+  "age": "12–14 years",
+  "pct": 29.4
+ },
+ {
+  "activity": "Creative writing",
+  "age": "5–8 years",
+  "pct": 18.8
+ },
+ {
+  "activity": "Creative writing",
+  "age": "9–11 years",
+  "pct": 22.6
+ },
+ {
+  "activity": "Creative writing",
+  "age": "12–14 years",
+  "pct": 13.9
+ },
+ {
+  "activity": "Creating digital content",
+  "age": "5–8 years",
+  "pct": 8.4
+ },
+ {
+  "activity": "Creating digital content",
+  "age": "9–11 years",
+  "pct": 20.5
+ },
+ {
+  "activity": "Creating digital content",
+  "age": "12–14 years",
+  "pct": 19.5
+ }
+]

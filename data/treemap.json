@@ -1,0 +1,98 @@
+[
+ {
+  "family": "Electric guitars",
+  "usd_million": 40.0,
+  "quantity": 134438,
+  "x": 2,
+  "x2": 309.86,
+  "y": 2,
+  "y2": 257.6,
+  "cx": 155.93,
+  "cy": 129.8,
+  "show_label": true
+ },
+ {
+  "family": "Electric keyboards",
+  "usd_million": 24.4,
+  "quantity": 110053,
+  "x": 313.86,
+  "x2": 500.48,
+  "y": 2,
+  "y2": 257.6,
+  "cx": 407.17,
+  "cy": 129.8,
+  "show_label": true
+ },
+ {
+  "family": "Acoustic pianos",
+  "usd_million": 22.7,
+  "quantity": 5944,
+  "x": 504.48,
+  "x2": 678.0,
+  "y": 2,
+  "y2": 257.6,
+  "cx": 591.24,
+  "cy": 129.8,
+  "show_label": true
+ },
+ {
+  "family": "Acoustic guitars",
+  "usd_million": 18.4,
+  "quantity": 246882,
+  "x": 2,
+  "x2": 252.32,
+  "y": 261.6,
+  "y2": 404.54,
+  "cx": 127.16,
+  "cy": 333.07,
+  "show_label": true
+ },
+ {
+  "family": "Other wind",
+  "usd_million": 13.3,
+  "quantity": 199004,
+  "x": 256.32,
+  "x2": 435.06,
+  "y": 261.6,
+  "y2": 404.54,
+  "cx": 345.69,
+  "cy": 333.07,
+  "show_label": true
+ },
+ {
+  "family": "Percussion",
+  "usd_million": 10.7,
+  "quantity": 483052,
+  "x": 439.06,
+  "x2": 583.12,
+  "y": 261.6,
+  "y2": 404.54,
+  "cx": 511.09,
+  "cy": 333.07,
+  "show_label": true
+ },
+ {
+  "family": "Bowed strings",
+  "usd_million": 6.9,
+  "quantity": 30363,
+  "x": 587.12,
+  "x2": 678.0,
+  "y": 261.6,
+  "y2": 404.54,
+  "cx": 632.56,
+  "cy": 333.07,
+  "show_label": true
+ },
+ {
+  "family": "Brass",
+  "usd_million": 4.5,
+  "quantity": 13729,
+  "x": 2,
+  "x2": 678,
+  "y": 408.54,
+  "y2": 418.0,
+  "cx": 340.0,
+  "cy": 413.27,
+  "show_label": false
+ }
+]

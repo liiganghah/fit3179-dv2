@@ -1,0 +1,74 @@
+[
+ {
+  "sex": "Men",
+  "age": "15–24",
+  "pct": 7.0,
+  "moe": 1.8
+ },
+ {
+  "sex": "Men",
+  "age": "25–34",
+  "pct": 4.7,
+  "moe": 1.0
+ },
+ {
+  "sex": "Men",
+  "age": "35–44",
+  "pct": 3.6,
+  "moe": 1.0
+ },
+ {
+  "sex": "Men",
+  "age": "45–54",
+  "pct": 4.2,
+  "moe": 1.0
+ },
+ {
+  "sex": "Men",
+  "age": "55–64",
+  "pct": 4.0,
+  "moe": 0.9
+ },
+ {
+  "sex": "Men",
+  "age": "65 and over",
+  "pct": 3.4,
+  "moe": 0.9
+ },
+ {
+  "sex": "Women",
+  "age": "15–24",
+  "pct": 6.4,
+  "moe": 2.5
+ },
+ {
+  "sex": "Women",
+  "age": "25–34",
+  "pct": 2.6,
+  "moe": 0.7
+ },
+ {
+  "sex": "Women",
+  "age": "35–44",
+  "pct": 3.1,
+  "moe": 0.9
+ },
+ {
+  "sex": "Women",
+  "age": "45–54",
+  "pct": 2.6,
+  "moe": 1.0
+ },
+ {
+  "sex": "Women",
+  "age": "55–64",
+  "pct": 2.5,
+  "moe": 0.7
+ },
+ {
+  "sex": "Women",
+  "age": "65 and over",
+  "pct": 2.9,
+  "moe": 0.5
+ }
+]

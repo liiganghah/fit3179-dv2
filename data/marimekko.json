@@ -1,0 +1,82 @@
+[
+ {
+  "column": "Takes lessons",
+  "pattern": "13 weeks or less, 2 hours or less",
+  "thousands": 41.1,
+  "pct_of_column": 10.2,
+  "x": 0,
+  "x2": 63.8377,
+  "y": 0,
+  "y2": 10.1607
+ },
+ {
+  "column": "Takes lessons",
+  "pattern": "13 weeks or less, 3 hours or more",
+  "thousands": 12.5,
+  "pct_of_column": 3.1,
+  "x": 0,
+  "x2": 63.8377,
+  "y": 10.1607,
+  "y2": 13.2509
+ },
+ {
+  "column": "Takes lessons",
+  "pattern": "More than 13 weeks, 2 hours or less",
+  "thousands": 235.7,
+  "pct_of_column": 58.7,
+  "x": 0,
+  "x2": 63.8377,
+  "y": 13.2509,
+  "y2": 71.5204
+ },
+ {
+  "column": "Takes lessons",
+  "pattern": "More than 13 weeks, 3 hours or more",
+  "thousands": 115.2,
+  "pct_of_column": 28.7,
+  "x": 0,
+  "x2": 63.8377,
+  "y": 71.5204,
+  "y2": 100.0
+ },
+ {
+  "column": "No lessons",
+  "pattern": "13 weeks or less, 2 hours or less",
+  "thousands": 56.9,
+  "pct_of_column": 26.4,
+  "x": 65.4377,
+  "x2": 100.0,
+  "y": 0,
+  "y2": 25.9817
+ },
+ {
+  "column": "No lessons",
+  "pattern": "13 weeks or less, 3 hours or more",
+  "thousands": 14.7,
+  "pct_of_column": 6.8,
+  "x": 65.4377,
+  "x2": 100.0,
+  "y": 25.9817,
+  "y2": 32.6941
+ },
+ {
+  "column": "No lessons",
+  "pattern": "More than 13 weeks, 2 hours or less",
+  "thousands": 114.9,
+  "pct_of_column": 53.3,
+  "x": 65.4377,
+  "x2": 100.0,
+  "y": 32.6941,
+  "y2": 85.1598
+ },
+ {
+  "column": "No lessons",
+  "pattern": "More than 13 weeks, 3 hours or more",
+  "thousands": 32.5,
+  "pct_of_column": 15.1,
+  "x": 65.4377,
+  "x2": 100.0,
+  "y": 85.1598,
+  "y2": 100.0
+ }
+]
