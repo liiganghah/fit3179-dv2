@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Treemap drawn with rectangles. Australia's 2024 musical-instrument import bill.",
+  "width": 678,
+  "height": 420,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "In 2024 the bill is guitars, keyboards and pianos",
+    "subtitle": "Area is import value in US dollars. Hover a block for the amount.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 680
+  },
+  "data": {"url": "data/treemap.json"},
+  "transform": [
+    {"calculate": "datum.family + '\\n$' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rect", "stroke": "#f6f1e7", "strokeWidth": 3},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "scale": {"domain": [0, 680]}, "axis": null},
+        "x2": {"field": "x2"},
+        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 420], "reverse": true}, "axis": null},
+        "y2": {"field": "y2"},
+        "color": {
+          "field": "family",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": ["Electric guitars", "Electric keyboards", "Acoustic pianos", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
+            "range": ["#9a3b2f", "#c46b4a", "#2f5d50", "#5d8a78", "#3d5a80", "#c4a35a", "#6b5b7a", "#8a8175"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "family", "title": "Family"},
+          {"field": "usd_million", "title": "US$ million", "format": ".1f"},
+          {"field": "quantity", "title": "Items", "format": ","}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.show_label"}],
+      "mark": {"type": "text", "fontSize": 13, "fontWeight": 700, "fill": "#fff7f2", "lineBreak": "\n"},
+      "encoding": {
+        "x": {"field": "cx", "type": "quantitative", "scale": {"domain": [0, 680]}, "axis": null},
+        "y": {"field": "cy", "type": "quantitative", "scale": {"domain": [0, 420], "reverse": true}, "axis": null},
+        "text": {"field": "tag", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "view": {"stroke": null}
+  }
+}

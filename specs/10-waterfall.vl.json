@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Waterfall. Change in Australia's instrument import bill, 2015 to 2024, millions of US dollars.",
+  "width": 640,
+  "height": 360,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "Almost all of the growth is electric guitars",
+    "subtitle": "Millions of US dollars. Percussion did not move, so it is left off. Bars float on the running total.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 680
+  },
+  "data": {"url": "data/waterfall.json"},
+  "transform": [
+    {"calculate": "(datum.low + datum.high) / 2", "as": "mid"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar", "size": 36},
+      "encoding": {
+        "x": {
+          "field": "step",
+          "type": "ordinal",
+          "sort": ["2015", "Electric guitars", "Electric keyboards", "Bowed strings", "Acoustic pianos", "Other wind", "Brass", "Acoustic guitars", "2024"],
+          "axis": {"title": null, "labelAngle": -35, "labelLimit": 120}
+        },
+        "y": {"field": "low", "type": "quantitative", "title": "US$ million", "scale": {"domain": [0, 160]}},
+        "y2": {"field": "high"},
+        "color": {
+          "field": "kind",
+          "type": "nominal",
+          "title": null,
+          "scale": {"domain": ["Total", "Rise", "Fall"], "range": ["#1c1915", "#9a3b2f", "#2f5d50"]},
+          "legend": {"orient": "bottom", "direction": "horizontal"}
+        },
+        "tooltip": [
+          {"field": "step", "title": "Step"},
+          {"field": "label", "title": "Change"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -8, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+      "encoding": {
+        "x": {
+          "field": "step",
+          "type": "ordinal",
+          "sort": ["2015", "Electric guitars", "Electric keyboards", "Bowed strings", "Acoustic pianos", "Other wind", "Brass", "Acoustic guitars", "2024"]
+        },
+        "y": {"field": "high", "type": "quantitative", "scale": {"domain": [0, 160]}},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "axis": {"labelColor": "#3d3832", "titleColor": "#5c564c", "gridColor": "#e4ddd0", "domainColor": "#c9c0b2", "labelFontSize": 12, "titleFontSize": 13},
+    "legend": {"labelColor": "#1c1915", "labelFontSize": 13},
+    "view": {"stroke": null}
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap. Creative-activity participation by age band, children 5–14, 2021–22.",
+  "width": 460,
+  "height": 280,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "Playing peaks at ages 9 to 11",
+    "subtitle": "Percent of children in each age band, 2021–22. Screen time and reading are left off.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 620
+  },
+  "data": {"url": "data/heatmap.json"},
+  "layer": [
+    {
+      "mark": {"type": "rect", "stroke": "#f6f1e7", "strokeWidth": 4},
+      "encoding": {
+        "color": {
+          "field": "pct",
+          "type": "quantitative",
+          "title": "Percent",
+          "scale": {"scheme": "reds", "domain": [0, 46]},
+          "legend": {"orient": "right", "gradientLength": 140}
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "fontSize": 13, "fontWeight": 600},
+      "encoding": {
+        "text": {"field": "pct", "format": ".1f"},
+        "color": {
+          "condition": {"test": "datum.pct >= 30", "value": "#fff7f2"},
+          "value": "#1c1915"
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "age",
+      "type": "ordinal",
+      "sort": ["5–8 years", "9–11 years", "12–14 years"],
+      "axis": {"title": null, "labelAngle": 0, "domain": false, "ticks": false, "labelPadding": 8}
+    },
+    "y": {
+      "field": "activity",
+      "type": "ordinal",
+      "sort": ["Singing or playing", "Creating digital content", "Creative writing", "Dancing", "Drama", "Art and craft"],
+      "axis": {"title": null, "domain": false, "ticks": false, "labelPadding": 8, "labelLimit": 240}
+    },
+    "tooltip": [
+      {"field": "activity", "title": "Activity"},
+      {"field": "age", "title": "Age"},
+      {"field": "pct", "title": "Percent", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "axis": {"labelColor": "#1c1915", "labelFontSize": 13},
+    "legend": {"labelColor": "#3d3832", "titleColor": "#5c564c"},
+    "view": {"stroke": null}
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Slope chart. Children's participation in creative activities, 2017–18 and 2021–22.",
+  "width": 620,
+  "height": 400,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "Music slipped, and so did most other creative activities",
+    "subtitle": "Percent of children aged 5 to 14 who took part outside school hours",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 760
+  },
+  "data": {"url": "data/slope.json"},
+  "transform": [
+    {
+      "calculate": "datum.activity == 'Singing or playing' ? 1.6 : datum.activity == 'Creative writing' ? -1.6 : 0",
+      "as": "nudge"
+    },
+    {"calculate": "datum.pct + datum.nudge", "as": "labelY"}
+  ],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "pick",
+          "select": {"type": "point", "fields": ["activity"]},
+          "bind": "legend"
+        }
+      ],
+      "mark": {"type": "line", "point": {"size": 80}, "interpolate": "linear"},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {"title": null, "labelAngle": 0, "domain": false, "ticks": false, "labelFontSize": 13, "labelPadding": 8},
+          "scale": {"padding": 0.45}
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "title": "Percent of children",
+          "scale": {"domain": [0, 46]},
+          "axis": {"tickCount": 5, "grid": true}
+        },
+        "color": {
+          "field": "activity",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": ["Singing or playing", "Art and craft", "Creative writing", "Dancing", "Creating digital content", "Drama"],
+            "range": ["#9a3b2f", "#2f5d50", "#3d5a80", "#c46b4a", "#6b5b7a", "#8a8175"]
+          },
+          "legend": {"orient": "right", "labelLimit": 220}
+        },
+        "strokeWidth": {
+          "condition": {"test": "datum.activity == 'Singing or playing'", "value": 3.6},
+          "value": 2
+        },
+        "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.18},
+        "tooltip": [
+          {"field": "activity", "title": "Activity"},
+          {"field": "year", "title": "Year"},
+          {"field": "pct", "title": "Percent", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year == '2021–22'"}],
+      "mark": {"type": "text", "align": "left", "dx": 12, "fontSize": 12, "fontWeight": 600, "fill": "#1c1915"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "scale": {"padding": 0.45}, "axis": null},
+        "y": {"field": "labelY", "type": "quantitative", "scale": {"domain": [0, 46]}, "axis": null},
+        "text": {"field": "pct", "format": ".1f"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "axis": {"labelColor": "#3d3832", "titleColor": "#5c564c", "gridColor": "#e4ddd0", "domainColor": "#c9c0b2", "labelFontSize": 12, "titleFontSize": 13},
+    "legend": {"labelColor": "#1c1915", "labelFontSize": 13},
+    "view": {"stroke": null}
+  }
+}

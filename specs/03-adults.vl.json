@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Line chart. Adults who sing or play, by age and sex, 2021–22.",
+  "width": 640,
+  "height": 340,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "After 14, playing becomes uncommon",
+    "subtitle": "Percent of people aged 15 and over. A different question from the child survey, so do not join the two into one line.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 680
+  },
+  "data": {"url": "data/adults.json"},
+  "mark": {"type": "line", "point": {"size": 70}, "strokeWidth": 2.6},
+  "encoding": {
+    "x": {
+      "field": "age",
+      "type": "ordinal",
+      "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"],
+      "axis": {"title": "Age", "labelAngle": 0}
+    },
+    "y": {
+      "field": "pct",
+      "type": "quantitative",
+      "title": "Percent who sing or play",
+      "scale": {"domain": [0, 10]}
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "title": null,
+      "scale": {"domain": ["Men", "Women"], "range": ["#9a3b2f", "#2f5d50"]},
+      "legend": {"orient": "top-right"}
+    },
+    "tooltip": [
+      {"field": "sex", "title": "Sex"},
+      {"field": "age", "title": "Age"},
+      {"field": "pct", "title": "Percent", "format": ".1f"},
+      {"field": "moe", "title": "Margin of error, ± percentage points", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "axis": {"labelColor": "#3d3832", "titleColor": "#5c564c", "gridColor": "#e4ddd0", "domainColor": "#c9c0b2", "labelFontSize": 12, "titleFontSize": 13},
+    "legend": {"labelColor": "#1c1915", "labelFontSize": 13},
+    "view": {"stroke": null}
+  }
+}

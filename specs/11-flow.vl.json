@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Flow map. Schematic routes of 2024 instrument imports into Australia. Lines are not shipping lanes.",
+  "width": 700,
+  "height": 400,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "The same money, drawn as routes into Australia",
+    "subtitle": "Line width is 2024 import value. The lines are spaced so they can be told apart. They are not sea routes.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 720
+  },
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "data/geo/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "#e7e0d4", "stroke": "#f6f1e7", "strokeWidth": 0.4}
+    },
+    {
+      "data": {"url": "data/origins.json"},
+      "transform": [
+        {"filter": "datum.usd_million >= 8"},
+        {"calculate": "134.5", "as": "ausLon"},
+        {"calculate": "-25.6", "as": "ausLat"}
+      ],
+      "mark": {"type": "rule", "opacity": 0.85},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "longitude2": {"field": "ausLon", "type": "quantitative"},
+        "latitude2": {"field": "ausLat", "type": "quantitative"},
+        "strokeWidth": {
+          "field": "usd_million",
+          "type": "quantitative",
+          "scale": {"domain": [8, 40], "range": [1.5, 10]},
+          "legend": null
+        },
+        "color": {
+          "field": "top_family",
+          "type": "nominal",
+          "title": "Largest family",
+          "scale": {
+            "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards"],
+            "range": ["#9a3b2f", "#2f5d50", "#c46b4a"]
+          },
+          "legend": {"orient": "bottom", "labelLimit": 160}
+        },
+        "tooltip": [
+          {"field": "partner", "title": "Origin"},
+          {"field": "usd_million", "title": "US$ million", "format": ".0f"},
+          {"field": "top_family", "title": "Largest family"}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"name": "Australia", "lon": 134.5, "lat": -25.6}]},
+      "mark": {"type": "point", "shape": "triangle", "size": 80, "fill": "#1c1915"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"}
+      }
+    },
+    {
+      "data": {"values": [{"name": "Australia", "lon": 134.5, "lat": -25.6}]},
+      "mark": {"type": "text", "dy": 12, "fontSize": 12, "fontWeight": 700, "fill": "#1c1915"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "name", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "legend": {"labelColor": "#1c1915", "titleColor": "#5c564c", "labelFontSize": 12, "titleFontSize": 13},
+    "view": {"stroke": null}
+  }
+}

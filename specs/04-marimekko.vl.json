@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Marimekko. Children who sing or play, by lessons and by how the year looked, 2021–22.",
+  "width": 640,
+  "height": 420,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "Most players take lessons, and almost all of them practise very little",
+    "subtitle": "Column width is the share of players. Blocks are the share inside that column. The gap is spacing.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 680
+  },
+  "data": {"url": "data/marimekko.json"},
+  "transform": [
+    {"calculate": "(datum.x + datum.x2) / 2", "as": "cx"},
+    {"calculate": "(datum.y + datum.y2) / 2", "as": "cy"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rect"},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": null},
+        "x2": {"field": "x2"},
+        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": null},
+        "y2": {"field": "y2"},
+        "color": {
+          "field": "pattern",
+          "type": "nominal",
+          "title": "How the year looked",
+          "scale": {
+            "domain": [
+              "More than 13 weeks, 2 hours or less",
+              "More than 13 weeks, 3 hours or more",
+              "13 weeks or less, 2 hours or less",
+              "13 weeks or less, 3 hours or more"
+            ],
+            "range": ["#9a3b2f", "#5c241c", "#e7b2a6", "#c46b4a"]
+          },
+          "legend": {"orient": "bottom", "columns": 1, "labelLimit": 420, "titleFontSize": 13, "labelFontSize": 13}
+        },
+        "tooltip": [
+          {"field": "column", "title": "Lessons"},
+          {"field": "pattern", "title": "Pattern"},
+          {"field": "thousands", "title": "Children, thousands", "format": ".1f"},
+          {"field": "pct_of_column", "title": "Percent of this column", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.pct_of_column >= 20"}],
+      "mark": {"type": "text", "fontSize": 13, "fontWeight": 700, "lineHeight": 16},
+      "encoding": {
+        "x": {"field": "cx", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": null},
+        "y": {"field": "cy", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": null},
+        "text": {"field": "pct_of_column", "format": ".1f"},
+        "color": {
+          "condition": {
+            "test": "datum.pattern == '13 weeks or less, 2 hours or less'",
+            "value": "#1c1915"
+          },
+          "value": "#fff7f2"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"label": "Takes lessons", "cx": 31.9, "cy": 93},
+          {"label": "No lessons", "cx": 82.7, "cy": 93}
+        ]
+      },
+      "mark": {"type": "text", "fontSize": 13, "fontWeight": 700, "fill": "#fff7f2"},
+      "encoding": {
+        "x": {"field": "cx", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": null},
+        "y": {"field": "cy", "type": "quantitative", "scale": {"domain": [0, 100]}, "axis": null},
+        "text": {"field": "label"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "legend": {"labelColor": "#1c1915", "titleColor": "#5c564c"},
+    "view": {"stroke": null}
+  }
+}

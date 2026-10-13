@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth. Children who attended live music, by state and territory, 2021–22.",
+  "width": 680,
+  "height": 560,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "The two biggest states are where children hear the least live music",
+    "subtitle": "Percent of children aged 5–14 who went to a live music concert or performance, 2021–22. This is attendance, not learning an instrument.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 700
+  },
+  "projection": {
+    "type": "conicEqualArea",
+    "rotate": [132, 0],
+    "center": [0, -27],
+    "parallels": [-18, -36]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/geo/australia-live-music.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "mark": {"type": "geoshape", "stroke": "#f6f1e7", "strokeWidth": 1.2},
+      "encoding": {
+        "color": {
+          "field": "properties.pct",
+          "type": "quantitative",
+          "title": "Percent",
+          "scale": {"scheme": "reds", "domain": [8, 24]},
+          "legend": {"orient": "bottom-right", "gradientLength": 120, "title": "Percent"}
+        },
+        "tooltip": [
+          {"field": "properties.state", "title": "State or territory", "type": "nominal"},
+          {"field": "properties.pct", "title": "Percent", "type": "quantitative", "format": ".1f"},
+          {"field": "properties.moe", "title": "Margin of error, ± percentage points", "type": "quantitative", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/state-labels.json"},
+      "mark": {"type": "text", "fontSize": 12, "fontWeight": 700, "font": "Source Sans 3, sans-serif"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"},
+        "color": {
+          "condition": {"test": "datum.pct >= 16", "value": "#fff7f2"},
+          "value": "#1c1915",
+          "legend": null
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"color": "independent"}},
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "legend": {"labelColor": "#3d3832", "titleColor": "#5c564c"},
+    "view": {"stroke": null}
+  }
+}

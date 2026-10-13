@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportional symbol map. Value of musical instruments imported by Australia in 2024, by origin.",
+  "width": 700,
+  "height": 400,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "Four countries supply most of what Australia buys",
+    "subtitle": "Circle area is the 2024 import value. Origins under US$1 million are left off. Equal Earth keeps country areas honest.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 720
+  },
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "data/geo/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "#e7e0d4", "stroke": "#f6f1e7", "strokeWidth": 0.4}
+    },
+    {
+      "data": {"url": "data/origins.json"},
+      "transform": [{"filter": "datum.usd_million >= 1 && datum.iso3 != ''"}],
+      "mark": {"type": "circle", "fill": "#9a3b2f", "fillOpacity": 0.78, "stroke": "#f6f1e7", "strokeWidth": 0.6},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "size": {
+          "field": "value_usd",
+          "type": "quantitative",
+          "title": "Import value",
+          "scale": {"domain": [1000000, 40000000], "range": [80, 1200]},
+          "legend": {"orient": "bottom-left", "format": "$,.0f", "title": "US dollars"}
+        },
+        "tooltip": [
+          {"field": "partner", "title": "Origin"},
+          {"field": "usd_million", "title": "US$ million", "format": ".1f"},
+          {"field": "top_family", "title": "Largest family on this route"},
+          {"field": "top_share", "title": "Share of that origin, percent", "format": ".0f"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/origins.json"},
+      "transform": [
+        {"filter": "indexof(['China','USA','Japan','Indonesia','Germany','Malaysia'], datum.partner) >= 0"},
+        {"calculate": "datum.partner + '  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"},
+        {"calculate": "datum.lon + (datum.partner == 'Malaysia' || datum.partner == 'Japan' ? 9 : 0)", "as": "labelLon"}
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "fill": "#1c1915",
+        "font": "Source Sans 3, sans-serif",
+        "align": "left",
+        "dx": 8,
+        "dy": -4
+      },
+      "encoding": {
+        "longitude": {"field": "labelLon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "tag", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "legend": {"labelColor": "#3d3832", "titleColor": "#5c564c"},
+    "view": {"stroke": null}
+  }
+}

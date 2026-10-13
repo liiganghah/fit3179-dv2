@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Isotype. Nineteen of every hundred children sang or played outside school in 2021–22.",
+  "width": 420,
+  "height": 420,
+  "background": "#f6f1e7",
+  "title": {
+    "text": "Nineteen in every hundred",
+    "subtitle": "Each square is one child in a hundred. The filled squares round 19.3 percent to 19.",
+    "font": "Fraunces, Georgia, serif",
+    "fontSize": 16,
+    "fontWeight": 560,
+    "anchor": "start",
+    "color": "#1c1915",
+    "subtitleFont": "Source Sans 3, sans-serif",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5c564c",
+    "offset": 12,
+    "limit": 460
+  },
+  "data": {"sequence": {"start": 0, "stop": 100, "as": "i"}},
+  "transform": [
+    {"calculate": "datum.i % 10", "as": "col"},
+    {"calculate": "floor(datum.i / 10)", "as": "row"},
+    {"calculate": "datum.i < 19 ? 'Sang or played' : 'Did not'", "as": "group"}
+  ],
+  "mark": {"type": "square", "size": 520, "stroke": "#f6f1e7", "strokeWidth": 2},
+  "encoding": {
+    "x": {"field": "col", "type": "ordinal", "axis": null, "scale": {"padding": 0.15}},
+    "y": {"field": "row", "type": "ordinal", "axis": null, "scale": {"padding": 0.15}},
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "title": null,
+      "scale": {"domain": ["Sang or played", "Did not"], "range": ["#9a3b2f", "#e4ddd0"]},
+      "legend": {"orient": "bottom", "direction": "horizontal"}
+    }
+  },
+  "config": {
+    "font": "Source Sans 3, sans-serif",
+    "legend": {"labelColor": "#1c1915", "labelFontSize": 13},
+    "view": {"stroke": null}
+  }
+}
