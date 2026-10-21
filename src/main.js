@@ -21,8 +21,20 @@ const options = {
 
 for (const [id, spec] of charts) {
   const node = document.getElementById(id);
-  embed(node, spec, options).catch((error) => {
-    node.textContent = "This chart could not be drawn.";
-    console.error(spec, error);
-  });
+  embed(node, spec, options)
+    .then((result) => {
+      let last = 0;
+      const redraw = () => {
+        const width = node.clientWidth;
+        if (!width || width === last) return;
+        last = width;
+        result.view.resize().run();
+      };
+      requestAnimationFrame(redraw);
+      if (window.ResizeObserver) new ResizeObserver(redraw).observe(node);
+    })
+    .catch((error) => {
+      node.textContent = "This chart could not be drawn.";
+      console.error(spec, error);
+    });
 }

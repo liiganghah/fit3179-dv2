@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart. Rank of Australia's musical-instrument import families, 2015 to 2024.",
-  "width": 640,
-  "height": 380,
+  "width": "container",
+  "height": 280,
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
     "text": "The electric guitar took the piano's place",
-    "subtitle": "Rank 1 is the family Australia spent the most on importing that year. Click a name to follow it.",
+    "subtitle": ["Rank 1 is the largest import bill that year.", "Click a name to follow that family."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,7 +17,7 @@
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
     "offset": 12,
-    "limit": 800
+    "limit": 2000
   },
   "data": {"url": "data/bump.json"},
   "transform": [
@@ -55,7 +56,7 @@
         "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
         "range": ["#9a3b2f", "#2f5d50", "#c46b4a", "#5d8a78", "#3d5a80", "#c4a35a", "#6b5b7a", "#8a8175"]
       },
-      "legend": {"orient": "right", "columns": 1, "labelLimit": 160}
+      "legend": {"orient": "bottom", "columns": 2, "labelLimit": 0}
     },
     "strokeWidth": {"field": "weight", "type": "quantitative", "legend": null},
     "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.15},

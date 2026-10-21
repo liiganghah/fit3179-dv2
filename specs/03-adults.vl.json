@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Line chart. Adults who sing or play, by age and sex, 2021–22.",
-  "width": 640,
-  "height": 340,
+  "width": "container",
+  "height": 280,
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
     "text": "After 14, playing becomes uncommon",
-    "subtitle": "Percent of people aged 15 and over. A different question from the child survey, so do not join the two into one line.",
+    "subtitle": ["Percent of people aged 15 and over.", "A different question from the child survey."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,7 +17,7 @@
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
     "offset": 12,
-    "limit": 680
+    "limit": 2000
   },
   "data": {"url": "data/adults.json"},
   "mark": {"type": "line", "point": {"size": 70}, "strokeWidth": 2.6},
@@ -25,7 +26,7 @@
       "field": "age",
       "type": "ordinal",
       "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"],
-      "axis": {"title": "Age", "labelAngle": 0}
+      "axis": {"title": "Age", "labelAngle": 0, "labelLimit": 0}
     },
     "y": {
       "field": "pct",

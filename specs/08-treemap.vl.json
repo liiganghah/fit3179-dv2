@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Treemap drawn with rectangles. Australia's 2024 musical-instrument import bill.",
-  "width": 678,
-  "height": 420,
+  "width": "container",
+  "height": 380,
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
     "text": "In 2024 the bill is guitars, keyboards and pianos",
-    "subtitle": "Area is import value in US dollars. Hover a block for the amount.",
+    "subtitle": ["Area is import value in US dollars.", "Hover a block for the amount."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,7 +17,7 @@
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
     "offset": 12,
-    "limit": 680
+    "limit": 2000
   },
   "data": {"url": "data/treemap.json"},
   "transform": [

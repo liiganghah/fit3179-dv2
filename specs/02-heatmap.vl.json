@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Heatmap. Creative-activity participation by age band, children 5–14, 2021–22.",
-  "width": 460,
-  "height": 280,
+  "width": "container",
+  "height": 260,
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
     "text": "Playing peaks at ages 9 to 11",
-    "subtitle": "Percent of children in each age band, 2021–22. Screen time and reading are left off.",
+    "subtitle": ["Percent of children in each age band, 2021–22.", "Screen time and reading are left off."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,7 +17,7 @@
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
     "offset": 12,
-    "limit": 620
+    "limit": 2000
   },
   "data": {"url": "data/heatmap.json"},
   "layer": [
@@ -28,7 +29,7 @@
           "type": "quantitative",
           "title": "Percent",
           "scale": {"scheme": "reds", "domain": [0, 46]},
-          "legend": {"orient": "right", "gradientLength": 140}
+          "legend": {"orient": "bottom", "direction": "horizontal", "gradientLength": 140}
         }
       }
     },
@@ -54,7 +55,7 @@
       "field": "activity",
       "type": "ordinal",
       "sort": ["Singing or playing", "Creating digital content", "Creative writing", "Dancing", "Drama", "Art and craft"],
-      "axis": {"title": null, "domain": false, "ticks": false, "labelPadding": 8, "labelLimit": 240}
+      "axis": {"title": null, "domain": false, "ticks": false, "labelPadding": 8, "labelLimit": 0}
     },
     "tooltip": [
       {"field": "activity", "title": "Activity"},

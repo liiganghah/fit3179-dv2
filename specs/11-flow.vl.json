@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Flow map. Schematic routes of 2024 instrument imports into Australia. Lines are not shipping lanes.",
-  "width": 700,
-  "height": 400,
+  "width": "container",
+  "height": 320,
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "The same money, drawn as routes into Australia",
-    "subtitle": "Line width is 2024 import value. The lines are spaced so they can be told apart. They are not sea routes.",
+    "text": "The same money, drawn as routes",
+    "subtitle": ["Line width is the 2024 import value.", "Lines are spaced apart. They are not sea routes."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,7 +17,7 @@
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
     "offset": 12,
-    "limit": 720
+    "limit": 2000
   },
   "projection": {"type": "equalEarth"},
   "layer": [
@@ -54,7 +55,7 @@
             "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards"],
             "range": ["#9a3b2f", "#2f5d50", "#c46b4a"]
           },
-          "legend": {"orient": "bottom", "labelLimit": 160}
+          "legend": {"orient": "bottom", "columns": 1, "labelLimit": 0}
         },
         "tooltip": [
           {"field": "partner", "title": "Origin"},

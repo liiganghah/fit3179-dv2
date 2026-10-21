@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Waterfall. Change in Australia's instrument import bill, 2015 to 2024, millions of US dollars.",
-  "width": 640,
-  "height": 360,
+  "width": "container",
+  "height": 320,
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
     "text": "Almost all of the growth is electric guitars",
-    "subtitle": "Millions of US dollars. Percussion did not move, so it is left off. Bars float on the running total.",
+    "subtitle": ["Millions of US dollars, 2015 to 2024.", "Bars float on the running total."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,7 +17,7 @@
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
     "offset": 12,
-    "limit": 680
+    "limit": 2000
   },
   "data": {"url": "data/waterfall.json"},
   "transform": [
@@ -24,22 +25,22 @@
   ],
   "layer": [
     {
-      "mark": {"type": "bar", "size": 36},
+      "mark": {"type": "bar", "size": 14},
       "encoding": {
-        "x": {
+        "y": {
           "field": "step",
           "type": "ordinal",
           "sort": ["2015", "Electric guitars", "Electric keyboards", "Bowed strings", "Acoustic pianos", "Other wind", "Brass", "Acoustic guitars", "2024"],
-          "axis": {"title": null, "labelAngle": -35, "labelLimit": 120}
+          "axis": {"title": null, "labelLimit": 0, "labelPadding": 6}
         },
-        "y": {"field": "low", "type": "quantitative", "title": "US$ million", "scale": {"domain": [0, 160]}},
-        "y2": {"field": "high"},
+        "x": {"field": "low", "type": "quantitative", "title": "US$ million", "scale": {"domain": [0, 185]}},
+        "x2": {"field": "high"},
         "color": {
           "field": "kind",
           "type": "nominal",
           "title": null,
           "scale": {"domain": ["Total", "Rise", "Fall"], "range": ["#1c1915", "#9a3b2f", "#2f5d50"]},
-          "legend": {"orient": "bottom", "direction": "horizontal"}
+          "legend": {"orient": "bottom", "direction": "horizontal", "labelLimit": 0}
         },
         "tooltip": [
           {"field": "step", "title": "Step"},
@@ -48,14 +49,14 @@
       }
     },
     {
-      "mark": {"type": "text", "dy": -8, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+      "mark": {"type": "text", "align": "left", "dx": 4, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
       "encoding": {
-        "x": {
+        "y": {
           "field": "step",
           "type": "ordinal",
           "sort": ["2015", "Electric guitars", "Electric keyboards", "Bowed strings", "Acoustic pianos", "Other wind", "Brass", "Acoustic guitars", "2024"]
         },
-        "y": {"field": "high", "type": "quantitative", "scale": {"domain": [0, 160]}},
+        "x": {"field": "high", "type": "quantitative", "scale": {"domain": [0, 185]}},
         "text": {"field": "label", "type": "nominal"}
       }
     }

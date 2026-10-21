@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Slope chart. Children's participation in creative activities, 2017–18 and 2021–22.",
-  "width": 620,
-  "height": 400,
+  "width": "container",
+  "height": 300,
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "Music slipped, and so did most other creative activities",
-    "subtitle": "Percent of children aged 5 to 14 who took part outside school hours",
+    "text": "Music slipped, and most other activities did too",
+    "subtitle": ["Percent of children aged 5 to 14", "who took part outside school hours."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,7 +17,7 @@
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
     "offset": 12,
-    "limit": 760
+    "limit": 2000
   },
   "data": {"url": "data/slope.json"},
   "transform": [
@@ -58,7 +59,7 @@
             "domain": ["Singing or playing", "Art and craft", "Creative writing", "Dancing", "Creating digital content", "Drama"],
             "range": ["#9a3b2f", "#2f5d50", "#3d5a80", "#c46b4a", "#6b5b7a", "#8a8175"]
           },
-          "legend": {"orient": "right", "labelLimit": 220}
+          "legend": {"orient": "bottom", "columns": 2, "labelLimit": 0}
         },
         "strokeWidth": {
           "condition": {"test": "datum.activity == 'Singing or playing'", "value": 3.6},
