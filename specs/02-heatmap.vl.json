@@ -35,7 +35,7 @@
           "field": "pct",
           "type": "quantitative",
           "title": "Percent",
-          "scale": {"domain": [0, 50], "range": ["#e8d6ce", "#dcc3b6", "#a52d09", "#6b280e", "#4a1c0e"], "interpolate": "lab"},
+          "scale": {"domain": [0, 50], "range": ["#f6e6e5", "#d87f79", "#59120d"], "interpolate": "hsl"},
           "legend": {"orient": "bottom", "direction": "horizontal", "gradientLength": 160, "values": [0, 25, 50]}
         }
       }
@@ -45,7 +45,7 @@
       "encoding": {
         "text": {"field": "pct", "format": ".1f"},
         "color": {
-          "condition": {"test": "datum.pct >= 22", "value": "#fff7f2"},
+          "condition": {"test": "datum.pct >= 35", "value": "#fff7f2"},
           "value": "#1c1915"
         }
       }

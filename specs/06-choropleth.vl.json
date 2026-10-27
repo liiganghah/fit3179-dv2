@@ -37,7 +37,7 @@
           "field": "properties.pct",
           "type": "quantitative",
           "title": "Percent",
-          "scale": {"domain": [8, 24], "range": ["#e8d6ce", "#dcc3b6", "#a52d09", "#6b280e", "#4a1c0e"], "interpolate": "lab"},
+          "scale": {"domain": [8, 24], "range": ["#f6e6e5", "#d87f79", "#59120d"], "interpolate": "hsl"},
           "legend": {"orient": "bottom", "direction": "horizontal", "gradientLength": 180, "title": "Percent, from 8"}
         },
         "tooltip": [
@@ -55,7 +55,7 @@
         "latitude": {"field": "lat", "type": "quantitative"},
         "text": {"field": "label", "type": "nominal"},
         "color": {
-          "condition": {"test": "datum.abbr == 'Qld' || datum.abbr == 'WA' || datum.abbr == 'NT'", "value": "#fff7f2"},
+          "condition": {"test": "datum.abbr == 'WA' || datum.abbr == 'NT'", "value": "#fff7f2"},
           "value": "#1c1915",
           "legend": null
         }
