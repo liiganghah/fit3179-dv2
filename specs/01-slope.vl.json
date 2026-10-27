@@ -2,11 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Slope chart. Children's participation in creative activities, 2017–18 and 2021–22.",
   "width": "container",
-  "height": 300,
+  "height": 360,
+  "padding": {"left": 4, "right": 112, "top": 4, "bottom": 4},
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "Music slipped, and most other activities did too",
+    "text": ["Music slipped, and most", "other activities did too"],
     "subtitle": ["Percent of children aged 5 to 14", "who took part outside school hours."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
@@ -20,13 +21,6 @@
     "limit": 2000
   },
   "data": {"url": "data/slope.json"},
-  "transform": [
-    {
-      "calculate": "datum.activity == 'Singing or playing' ? 1.6 : datum.activity == 'Creative writing' ? -1.6 : 0",
-      "as": "nudge"
-    },
-    {"calculate": "datum.pct + datum.nudge", "as": "labelY"}
-  ],
   "layer": [
     {
       "params": [
@@ -57,9 +51,9 @@
           "title": null,
           "scale": {
             "domain": ["Singing or playing", "Art and craft", "Creative writing", "Dancing", "Creating digital content", "Drama"],
-            "range": ["#9a3b2f", "#2f5d50", "#3d5a80", "#c46b4a", "#6b5b7a", "#8a8175"]
+            "range": ["#c7370b", "#6c581d", "#6c6b80", "#3f4a68", "#496894", "#2d2a0f"]
           },
-          "legend": {"orient": "bottom", "columns": 2, "labelLimit": 0}
+          "legend": {"orient": "bottom", "columns": 2, "columnPadding": 48, "labelLimit": 0}
         },
         "strokeWidth": {
           "condition": {"test": "datum.activity == 'Singing or playing'", "value": 3.6},
@@ -74,12 +68,48 @@
       }
     },
     {
-      "transform": [{"filter": "datum.year == '2021–22'"}],
-      "mark": {"type": "text", "align": "left", "dx": 12, "fontSize": 12, "fontWeight": 600, "fill": "#1c1915"},
+      "transform": [
+        {"filter": "datum.year == '2021–22' && datum.activity != 'Singing or playing' && datum.activity != 'Creative writing'"},
+        {"calculate": "datum.activity == 'Art and craft' ? 'Art and craft  ' + format(datum.pct, '.1f') : datum.activity == 'Creating digital content' ? 'Digital  ' + format(datum.pct, '.1f') : datum.activity == 'Dancing' ? 'Dancing  ' + format(datum.pct, '.1f') : 'Drama  ' + format(datum.pct, '.1f')", "as": "tag"}
+      ],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10, "fontSize": 11, "fontWeight": 700},
       "encoding": {
-        "x": {"field": "year", "type": "ordinal", "scale": {"padding": 0.45}, "axis": null},
-        "y": {"field": "labelY", "type": "quantitative", "scale": {"domain": [0, 46]}, "axis": null},
-        "text": {"field": "pct", "format": ".1f"}
+        "x": {"field": "year", "type": "ordinal", "scale": {"padding": 0.45}},
+        "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 46]}},
+        "text": {"field": "tag", "type": "nominal"},
+        "color": {
+          "field": "activity",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Singing or playing", "Art and craft", "Creative writing", "Dancing", "Creating digital content", "Drama"],
+            "range": ["#c7370b", "#6c581d", "#6c6b80", "#3f4a68", "#496894", "#2d2a0f"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.year == '2021–22' && datum.activity == 'Singing or playing'"},
+        {"calculate": "'Music  ' + format(datum.pct, '.1f')", "as": "tag"}
+      ],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10, "dy": -12, "fontSize": 11, "fontWeight": 700, "fill": "#c7370b"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "scale": {"padding": 0.45}},
+        "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 46]}},
+        "text": {"field": "tag", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.year == '2021–22' && datum.activity == 'Creative writing'"},
+        {"calculate": "'Writing  ' + format(datum.pct, '.1f')", "as": "tag"}
+      ],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10, "dy": 2, "fontSize": 11, "fontWeight": 700, "fill": "#6c6b80"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "scale": {"padding": 0.45}},
+        "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 46]}},
+        "text": {"field": "tag", "type": "nominal"}
       }
     }
   ],

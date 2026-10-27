@@ -3,11 +3,12 @@
   "description": "Treemap drawn with rectangles. Australia's 2024 musical-instrument import bill.",
   "width": "container",
   "height": 380,
+  "padding": {"bottom": 22},
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "In 2024 the bill is guitars, keyboards and pianos",
-    "subtitle": ["Area is import value in US dollars.", "Hover a block for the amount."],
+    "text": ["The 2024 bill,", "drawn as area"],
+    "subtitle": ["The largest block is electric guitars.", "Brass is named under the strip."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -37,7 +38,7 @@
           "title": null,
           "scale": {
             "domain": ["Electric guitars", "Electric keyboards", "Acoustic pianos", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
-            "range": ["#9a3b2f", "#c46b4a", "#2f5d50", "#5d8a78", "#3d5a80", "#c4a35a", "#6b5b7a", "#8a8175"]
+            "range": ["#c7370b", "#496894", "#1d3156", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
           },
           "legend": null
         },
@@ -55,6 +56,15 @@
         "x": {"field": "cx", "type": "quantitative", "scale": {"domain": [0, 680]}, "axis": null},
         "y": {"field": "cy", "type": "quantitative", "scale": {"domain": [0, 420], "reverse": true}, "axis": null},
         "text": {"field": "tag", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.family == 'Brass'"}],
+      "mark": {"type": "text", "align": "center", "baseline": "top", "dy": 6, "fontSize": 12, "fontWeight": 700, "fill": "#8d4a3c"},
+      "encoding": {
+        "x": {"field": "cx", "type": "quantitative", "scale": {"domain": [0, 680]}, "axis": null},
+        "y": {"field": "y2", "type": "quantitative", "scale": {"domain": [0, 420], "reverse": true}, "axis": null},
+        "text": {"value": "Brass  $5m"}
       }
     }
   ],

@@ -1,10 +1,25 @@
 :root {
-  --paper: #f4efe6;
+  --paper: #e6ddd0;
   --card: #f6f1e7;
   --ink: #1c1915;
   --muted: #5c564c;
   --rule: #d4cbbd;
-  --accent: #9a3b2f;
+  --accent: #c7370b;
+  --gap: 1.25rem;
+  --section-space: 3.75rem;
+
+  /* Largest to smallest. Keep a clear gap between neighbouring steps. */
+  --text-h1: 3.4rem;
+  --text-h2: 2.15rem;
+  --text-stat: 2.25rem;
+  --text-h3: 1.7rem;
+  --text-deck: 1.3rem;
+  --text-body: 1.0625rem;
+  --text-meta: 0.875rem;
+  --text-kicker: 0.6875rem;
+  --leading-body: 1.45;
+  --heading-space: 0.8rem;
+  --measure: 66ch;
 }
 
 * { box-sizing: border-box; }
@@ -16,172 +31,225 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "Source Sans 3", "Segoe UI", sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.5;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 
 .wrap {
-  width: min(1180px, calc(100% - 2.5rem));
+  width: min(1120px, calc(100% - 2.5rem));
   margin: 0 auto;
 }
 
 .mast {
-  padding: 2.6rem 0 1.5rem;
+  padding: 1.85rem 0 1.65rem;
   border-bottom: 1px solid var(--rule);
 }
 
 .mast-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(15rem, 0.7fr);
-  gap: 1rem 2.25rem;
-  align-items: end;
+  grid-template-columns: minmax(0, 38rem) minmax(11rem, 1fr);
+  column-gap: 2.25rem;
+  align-items: stretch;
+}
+
+.mast-photo {
+  margin: 0;
+  position: relative;
+  min-height: 12rem;
+  overflow: hidden;
+}
+
+.mast-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 42%;
+  display: block;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
 }
 
 .kicker,
-.rail-kicker,
 .group-label {
-  margin: 0 0 0.45rem;
+  margin: 0;
   color: var(--accent);
-  font-size: 0.78rem;
+  font-size: var(--text-kicker);
   font-weight: 700;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 h1, h2, h3 {
   font-family: Fraunces, Georgia, serif;
   font-weight: 560;
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -0.02em;
 }
 
 h1 {
-  margin: 0 0 0.75rem;
-  font-size: 3.15rem;
+  margin: 0.28rem 0 0;
+  font-size: 2.55rem;
+  font-weight: 640;
 }
 
-h2 {
-  margin: 0 0 0.35rem;
-  font-size: 1.85rem;
-}
+h2 { margin: 0; font-size: var(--text-h2); }
 
 h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1.22rem;
+  margin: 0 0 var(--heading-space);
+  font-size: var(--text-h3);
+  font-weight: 640;
+  line-height: 1.15;
+}
+
+.mast-copy {
+  max-width: 38rem;
 }
 
 .dek {
-  margin: 0;
-  font-size: 1.22rem;
-  line-height: 1.45;
+  margin: 0.4rem 0 0;
+  font-size: var(--text-body);
+  line-height: 1.4;
 }
 
 .byline {
-  margin: 0;
+  margin: 0.35rem 0 0;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: var(--text-meta);
+  line-height: 1.35;
+}
+
+main .chapter:first-of-type {
+  padding-top: 1.6rem;
 }
 
 .chapter {
-  padding: 2.1rem 0 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--section-space) 0 0;
 }
 
 .num {
-  margin: 0 0 0.15rem;
+  margin: 0;
   color: var(--accent);
   font-family: Fraunces, Georgia, serif;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
-
-.chapter > p,
-.prose-pair p,
-.trio p,
-.colophon p {
-  margin: 0.35rem 0 0.8rem;
-}
-
-.pair,
-.split,
-.trio {
-  display: grid;
-  gap: 1rem 1.15rem;
-  align-items: stretch;
-}
-
-.pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-.split { grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.85fr); align-items: start; }
-
-.trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-.intro-split { margin: 0.4rem 0 1.15rem; align-items: start; }
-
-.intro-split > p { margin: 0; }
 
 .panel {
   display: flex;
   flex-direction: column;
+  gap: 0.7rem;
   min-width: 0;
   margin: 0;
-  padding: 0.85rem 0.95rem 0.9rem;
+  padding: 1rem;
   background: var(--card);
   border: 1px solid var(--rule);
   border-top: 3px solid var(--accent);
 }
 
-.panel p { margin: 0.2rem 0 0.65rem; }
-
-.panel .viz,
-.panel.rail {
-  min-width: 0;
+.panel p,
+figcaption {
+  margin: 0;
 }
 
-.viz {
-  margin: 0.35rem 0 0;
+.panel p {
+  max-width: 62ch;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 
-.panel > .viz,
-.stack-gap { margin-top: auto; }
+.note p,
+.colophon p,
+figcaption {
+  max-width: 62ch;
+}
+
+.chart-head h3 {
+  margin: 0;
+  font-size: var(--text-deck);
+  font-weight: 560;
+  line-height: 1.2;
+}
+
+.chart-head p {
+  margin: 0.28rem 0 0;
+  color: var(--muted);
+  font-size: var(--text-meta);
+  line-height: 1.35;
+}
+
+.bills .chart {
+  margin-top: 0.55rem;
+}
+
+.bills figure:last-child figcaption {
+  margin-top: auto;
+}
 
 .chart {
   width: 100%;
   min-width: 0;
-  margin: 0.15rem 0 0.2rem;
 }
 
-.chart .vega-embed {
-  width: 100%;
+.chart .vega-embed { width: 100%; }
+
+#chart-isotype {
+  display: flex;
+  justify-content: center;
 }
 
-figcaption,
-.caption {
-  margin: 0.45rem 0 0;
+#playing .cols {
+  align-items: start;
+}
+
+#chart-isotype .vega-embed { width: auto; }
+
+figcaption {
+  margin-top: 0.45rem;
   color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.45;
+  font-size: var(--text-meta);
+  line-height: 1.4;
+}
+
+figcaption.cols p {
+  color: var(--muted);
+  font-size: var(--text-meta);
+  line-height: 1.4;
 }
 
 .note {
-  margin: 0.85rem 0 0.2rem;
-  padding: 0.8rem 1rem;
+  margin: 0;
+  padding: 0.85rem 1rem;
   border-left: 3px solid var(--accent);
-  background: #efe8dc;
+  background: #f3ecdf;
 }
 
-.note p { margin: 0; }
-
-.rail {
-  justify-content: flex-start;
+.note p {
+  margin: 0;
+  line-height: var(--leading-body);
 }
+
+.chart .vega-embed,
+.chart svg { overflow: visible; }
 
 .stats {
   display: grid;
-  gap: 0.7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
 }
 
 .stat {
-  padding: 0.75rem 0.85rem 0.65rem;
-  background: #efe8dc;
+  margin: 0;
+  padding: 0.85rem 1rem 0.75rem;
+  background: var(--card);
   border: 1px solid var(--rule);
 }
 
@@ -189,51 +257,72 @@ figcaption,
   display: block;
   color: var(--accent);
   font-family: Fraunces, Georgia, serif;
-  font-size: 1.55rem;
+  font-size: var(--text-stat);
   font-weight: 560;
   line-height: 1.1;
 }
 
-.stat span {
+.stat > span {
   display: block;
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: var(--text-meta);
   line-height: 1.35;
 }
 
-ol.idioms {
-  margin: 0.2rem 0 0.4rem;
-  padding-left: 1.15rem;
-}
-
-ol.idioms li { margin: 0.4rem 0; }
-
-.trio h3 { margin-top: 0.2rem; }
-
-#reading h3 { margin-top: 1.35rem; }
-
 a { color: var(--accent); }
 
+/* Same hexes as the chart marks.
+   Sunburst: guitars and children who play. Glacier: pianos and keyboards.
+   Heatmap and the live-music map use one sunburst red, light to dark. */
+.ink-play,
+.ink-eguitar,
+.ink-rise,
+.ink-nsw,
+.ink-vic { color: #c7370b; }
+.ink-qld { color: #952e0f; }
+.ink-aguitar { color: #8e5815; }
+.ink-craft,
+.ink-perc { color: #6c581d; }
+.ink-brass,
+.ink-women { color: #8d4a3c; }
+.ink-bow,
+.ink-drama,
+.ink-men { color: #2d2a0f; }
+.ink-nt { color: #3c1306; }
+.ink-wa { color: #6f220b; }
+.ink-piano { color: #1d3156; }
+.ink-keys,
+.ink-digital { color: #496894; }
+.ink-wind,
+.ink-dance,
+.ink-fall { color: #3f4a68; }
+.ink-write { color: #6c6b80; }
+
 .colophon {
-  margin-top: 2rem;
+  margin-top: var(--section-space);
   padding: 1.5rem 0 2.8rem;
   border-top: 1px solid var(--rule);
-  font-size: 0.98rem;
+  font-size: var(--text-meta);
 }
 
 .colophon h2 {
-  margin-bottom: 0.6rem;
-  font-size: 1.3rem;
+  margin: 0 0 var(--heading-space);
+  font-size: var(--text-h3);
 }
 
-@media (max-width: 980px) {
-  .mast-grid,
-  .pair,
-  .split,
-  .trio {
-    grid-template-columns: 1fr;
-  }
+.colophon p { margin: 0 0 0.75rem; }
 
-  h1 { font-size: 2.4rem; }
+.colophon p:last-child { margin-bottom: 0; }
+
+@media (max-width: 860px) {
+  .cols,
+  .stats { grid-template-columns: 1fr; }
+
+  .mast-grid { display: block; }
+  .mast-photo { display: none; }
+
+  h1 { font-size: 2.05rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.4rem; }
 }

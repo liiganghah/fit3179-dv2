@@ -2,12 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Flow map. Schematic routes of 2024 instrument imports into Australia. Lines are not shipping lanes.",
   "width": "container",
-  "height": 320,
+  "height": 330,
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "The same money, drawn as routes",
-    "subtitle": ["Line width is the 2024 import value.", "Lines are spaced apart. They are not sea routes."],
+    "text": ["The same money,", "drawn as routes"],
+    "subtitle": ["Line width is the same 2024 dollars.", "Curves are schematic, not sea routes."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -19,7 +19,7 @@
     "offset": 12,
     "limit": 2000
   },
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "equalEarth", "rotate": [-150, 0]},
   "layer": [
     {
       "data": {
@@ -32,20 +32,28 @@
       "data": {"url": "data/origins.json"},
       "transform": [
         {"filter": "datum.usd_million >= 8"},
-        {"calculate": "134.5", "as": "ausLon"},
-        {"calculate": "-25.6", "as": "ausLat"}
+        {"calculate": "datum.lon < -30 ? datum.lon + 360 : datum.lon", "as": "x0"},
+        {"calculate": "134.5", "as": "x1"},
+        {"calculate": "-25.6", "as": "y1"},
+        {"calculate": "datum.partner == 'Germany' ? -0.48 : datum.partner == 'USA' ? -0.22 : 0.28", "as": "bend"},
+        {"calculate": "(datum.x0 + datum.x1) / 2 - (datum.y1 - datum.lat) * datum.bend", "as": "cx"},
+        {"calculate": "(datum.lat + datum.y1) / 2 + (datum.x1 - datum.x0) * datum.bend", "as": "cy"},
+        {"calculate": "sequence(0, 1.0001, 0.04)", "as": "t"},
+        {"flatten": ["t"]},
+        {"calculate": "pow(1 - datum.t, 2) * datum.x0 + 2 * (1 - datum.t) * datum.t * datum.cx + pow(datum.t, 2) * datum.x1", "as": "px"},
+        {"calculate": "pow(1 - datum.t, 2) * datum.lat + 2 * (1 - datum.t) * datum.t * datum.cy + pow(datum.t, 2) * datum.y1", "as": "py"}
       ],
-      "mark": {"type": "rule", "opacity": 0.85},
+      "mark": {"type": "line", "strokeCap": "round", "opacity": 0.72, "interpolate": "monotone"},
       "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"},
-        "longitude2": {"field": "ausLon", "type": "quantitative"},
-        "latitude2": {"field": "ausLat", "type": "quantitative"},
+        "longitude": {"field": "px", "type": "quantitative"},
+        "latitude": {"field": "py", "type": "quantitative"},
+        "detail": {"field": "partner"},
+        "order": {"field": "t", "type": "quantitative"},
         "strokeWidth": {
           "field": "usd_million",
           "type": "quantitative",
-          "scale": {"domain": [8, 40], "range": [1.5, 10]},
-          "legend": null
+          "scale": {"domain": [8, 40], "range": [2, 12]},
+          "legend": {"orient": "bottom", "direction": "horizontal", "title": "US$ million", "values": [8, 20, 40], "labelLimit": 0, "padding": 16}
         },
         "color": {
           "field": "top_family",
@@ -53,9 +61,9 @@
           "title": "Largest family",
           "scale": {
             "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards"],
-            "range": ["#9a3b2f", "#2f5d50", "#c46b4a"]
+            "range": ["#c7370b", "#1d3156", "#496894"]
           },
-          "legend": {"orient": "bottom", "columns": 1, "labelLimit": 0}
+          "legend": {"orient": "bottom", "columns": 1, "labelLimit": 0, "symbolType": "stroke", "symbolStrokeWidth": 4, "padding": 16}
         },
         "tooltip": [
           {"field": "partner", "title": "Origin"},
@@ -65,20 +73,89 @@
       }
     },
     {
-      "data": {"values": [{"name": "Australia", "lon": 134.5, "lat": -25.6}]},
-      "mark": {"type": "point", "shape": "triangle", "size": 80, "fill": "#1c1915"},
-      "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"}
-      }
+      "data": {"url": "data/origins.json"},
+      "transform": [
+        {"filter": "datum.usd_million >= 8"},
+        {"calculate": "(datum.partner == 'USA' ? 'US' : datum.partner) + '  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "circle", "size": 34, "fill": "#1c1915", "stroke": "#f6f1e7", "strokeWidth": 1},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"}
+          }
+        },
+        {
+          "transform": [{"filter": "datum.partner == 'Germany'"}],
+          "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "dy": -8, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "tag"}
+          }
+        },
+        {
+          "transform": [{"filter": "datum.partner == 'China'"}],
+          "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -8, "dy": -6, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "tag"}
+          }
+        },
+        {
+          "transform": [{"filter": "datum.partner == 'Japan'"}],
+          "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 16, "dy": -6, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "tag"}
+          }
+        },
+        {
+          "transform": [{"filter": "datum.partner == 'USA'"}],
+          "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "dy": 14, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "tag"}
+          }
+        },
+        {
+          "transform": [{"filter": "datum.partner == 'Malaysia'"}],
+          "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -6, "dy": -16, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "tag"}
+          }
+        },
+        {
+          "transform": [{"filter": "datum.partner == 'Indonesia'"}],
+          "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -16, "dy": 2, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915"},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "tag"}
+          }
+        }
+      ]
     },
     {
       "data": {"values": [{"name": "Australia", "lon": 134.5, "lat": -25.6}]},
-      "mark": {"type": "text", "dy": 12, "fontSize": 12, "fontWeight": 700, "fill": "#1c1915"},
+      "layer": [
+        {
+          "mark": {"type": "circle", "size": 70, "fill": "#1c1915", "stroke": "#f6f1e7", "strokeWidth": 1.5}
+        },
+        {
+          "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 14, "dy": 16, "fontSize": 12, "fontWeight": 700, "fill": "#1c1915"},
+          "encoding": {"text": {"field": "name"}}
+        }
+      ],
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"},
-        "text": {"field": "name", "type": "nominal"}
+        "latitude": {"field": "lat", "type": "quantitative"}
       }
     }
   ],

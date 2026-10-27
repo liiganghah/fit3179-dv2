@@ -2,11 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart. Rank of Australia's musical-instrument import families, 2015 to 2024.",
   "width": "container",
-  "height": 280,
+  "height": 300,
+  "padding": {"left": 2, "right": 4, "top": 4, "bottom": 16},
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "The electric guitar took the piano's place",
+    "text": ["The electric guitar took", "the piano's place"],
     "subtitle": ["Rank 1 is the largest import bill that year.", "Click a name to follow that family."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
@@ -26,6 +27,8 @@
       "as": "weight"
     }
   ],
+  "layer": [
+  {
   "params": [
     {
       "name": "pick",
@@ -38,7 +41,8 @@
     "x": {
       "field": "year",
       "type": "ordinal",
-      "axis": {"title": null, "labelAngle": 0}
+      "scale": {"padding": 0.05},
+      "axis": {"title": null, "labelAngle": -45, "labelAlign": "right", "labelBaseline": "middle", "labelOverlap": false, "labelFontSize": 11, "labelPadding": 2}
     },
     "y": {
       "field": "rank",
@@ -54,9 +58,9 @@
       "sort": ["Electric guitars", "Acoustic pianos", "Electric keyboards", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
       "scale": {
         "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
-        "range": ["#9a3b2f", "#2f5d50", "#c46b4a", "#5d8a78", "#3d5a80", "#c4a35a", "#6b5b7a", "#8a8175"]
+        "range": ["#c7370b", "#1d3156", "#496894", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
       },
-      "legend": {"orient": "bottom", "columns": 2, "labelLimit": 0}
+      "legend": {"orient": "bottom", "columns": 2, "columnPadding": 36, "labelLimit": 0}
     },
     "strokeWidth": {"field": "weight", "type": "quantitative", "legend": null},
     "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.15},
@@ -66,7 +70,28 @@
       {"field": "rank", "title": "Rank"},
       {"field": "usd_million", "title": "US$ million", "format": ".1f"}
     ]
+  }
   },
+  {
+    "transform": [{"filter": "datum.year == 2024"}],
+    "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 9, "fontSize": 11, "fontWeight": 700},
+    "encoding": {
+      "x": {"field": "year", "type": "ordinal"},
+      "y": {"field": "rank", "type": "quantitative", "scale": {"domain": [1, 8], "reverse": true}},
+      "text": {"field": "family", "type": "nominal"},
+      "color": {
+        "field": "family",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
+          "range": ["#c7370b", "#1d3156", "#496894", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
+        },
+        "legend": null
+      },
+      "opacity": {"condition": {"param": "pick", "value": 1}, "value": 0.15}
+    }
+  }
+  ],
   "config": {
     "font": "Source Sans 3, sans-serif",
     "axis": {"labelColor": "#3d3832", "titleColor": "#5c564c", "gridColor": "#e4ddd0", "domainColor": "#c9c0b2", "labelFontSize": 12, "titleFontSize": 13},

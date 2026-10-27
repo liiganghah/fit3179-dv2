@@ -15,14 +15,59 @@ const charts = [
 ];
 
 const options = {
-  actions: { export: true, source: false, compiled: false, editor: true },
+  actions: false,
   renderer: "svg"
 };
 
-for (const [id, spec] of charts) {
+function lines(value) {
+  if (value == null || value === "") return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+function fill(parent, parts) {
+  parts.forEach((line, index) => {
+    if (index) parent.append(document.createElement("br"));
+    parent.append(document.createTextNode(line));
+  });
+}
+
+function placeTitle(node, title) {
+  const text = lines(title && title.text);
+  if (!text.length) return;
+  const head = document.createElement("div");
+  head.className = "chart-head";
+  const heading = document.createElement("h3");
+  fill(heading, text);
+  head.append(heading);
+  const subtitle = lines(title.subtitle);
+  if (subtitle.length) {
+    const note = document.createElement("p");
+    fill(note, subtitle);
+    head.append(note);
+  }
+  node.before(head);
+}
+
+for (const [id, url] of charts) {
   const node = document.getElementById(id);
-  embed(node, spec, options)
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then((spec) => {
+      placeTitle(node, spec.title);
+      delete spec.title;
+      if (id === "chart-isotype") {
+        const avail = node.clientWidth || 480;
+        const step = Math.max(28, Math.min(39, Math.floor((avail - 8) / 10)));
+        spec.width = { step };
+        spec.height = { step };
+      }
+      return embed(node, spec, options);
+    })
     .then((result) => {
+      if (id === "chart-isotype") return;
       let last = 0;
       const redraw = () => {
         const width = node.clientWidth;
@@ -35,6 +80,6 @@ for (const [id, spec] of charts) {
     })
     .catch((error) => {
       node.textContent = "This chart could not be drawn.";
-      console.error(spec, error);
+      console.error(url, error);
     });
 }

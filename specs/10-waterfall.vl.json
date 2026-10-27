@@ -2,11 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Waterfall. Change in Australia's instrument import bill, 2015 to 2024, millions of US dollars.",
   "width": "container",
-  "height": 320,
+  "height": 348,
+  "padding": {"left": 14, "right": 28, "top": 4, "bottom": 4},
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "Almost all of the growth is electric guitars",
+    "text": ["Almost all of the growth", "is electric guitars"],
     "subtitle": ["Millions of US dollars, 2015 to 2024.", "Bars float on the running total."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
@@ -31,15 +32,15 @@
           "field": "step",
           "type": "ordinal",
           "sort": ["2015", "Electric guitars", "Electric keyboards", "Bowed strings", "Acoustic pianos", "Other wind", "Brass", "Acoustic guitars", "2024"],
-          "axis": {"title": null, "labelLimit": 0, "labelPadding": 6}
+          "axis": {"title": null, "labelAngle": 0, "labelLimit": 0, "labelPadding": 6, "domain": false, "ticks": false}
         },
-        "x": {"field": "low", "type": "quantitative", "title": "US$ million", "scale": {"domain": [0, 185]}},
+        "x": {"field": "low", "type": "quantitative", "title": "US$ million", "scale": {"domain": [0, 165]}},
         "x2": {"field": "high"},
         "color": {
           "field": "kind",
           "type": "nominal",
           "title": null,
-          "scale": {"domain": ["Total", "Rise", "Fall"], "range": ["#1c1915", "#9a3b2f", "#2f5d50"]},
+          "scale": {"domain": ["Total", "Rise", "Fall"], "range": ["#0f0f0f", "#c7370b", "#3f4a68"]},
           "legend": {"orient": "bottom", "direction": "horizontal", "labelLimit": 0}
         },
         "tooltip": [
@@ -56,7 +57,7 @@
           "type": "ordinal",
           "sort": ["2015", "Electric guitars", "Electric keyboards", "Bowed strings", "Acoustic pianos", "Other wind", "Brass", "Acoustic guitars", "2024"]
         },
-        "x": {"field": "high", "type": "quantitative", "scale": {"domain": [0, 185]}},
+        "x": {"field": "high", "type": "quantitative", "scale": {"domain": [0, 165]}},
         "text": {"field": "label", "type": "nominal"}
       }
     }

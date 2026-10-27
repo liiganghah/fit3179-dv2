@@ -2,12 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Proportional symbol map. Value of musical instruments imported by Australia in 2024, by origin.",
   "width": "container",
-  "height": 320,
+  "height": 330,
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "Four countries supply most of the imports",
-    "subtitle": ["Circle area is the 2024 import value.", "Equal Earth. Origins under US$1 million are left off."],
+    "text": ["Four countries supply", "most of the imports"],
+    "subtitle": ["Circle area is the 2024 import value.", "The $8m, $20m and $40m ticks match Figure 11."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -19,7 +19,7 @@
     "offset": 12,
     "limit": 2000
   },
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "equalEarth", "rotate": [-150, 0]},
   "layer": [
     {
       "data": {
@@ -31,7 +31,7 @@
     {
       "data": {"url": "data/origins.json"},
       "transform": [{"filter": "datum.usd_million >= 1 && datum.iso3 != ''"}],
-      "mark": {"type": "circle", "fill": "#9a3b2f", "fillOpacity": 0.78, "stroke": "#f6f1e7", "strokeWidth": 0.6},
+      "mark": {"type": "circle", "fill": "#c7370b", "fillOpacity": 0.9, "stroke": "#f6f1e7", "strokeWidth": 0.6},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
@@ -39,8 +39,8 @@
           "field": "value_usd",
           "type": "quantitative",
           "title": "Import value",
-          "scale": {"domain": [1000000, 40000000], "range": [80, 1200]},
-          "legend": {"orient": "bottom", "direction": "horizontal", "format": "$,.0f", "title": "US dollars"}
+          "scale": {"domain": [1000000, 40000000], "range": [28, 700]},
+          "legend": {"orient": "bottom", "direction": "horizontal", "format": "$.2s", "title": "Circle area", "values": [8000000, 20000000, 40000000], "labelLimit": 0}
         },
         "tooltip": [
           {"field": "partner", "title": "Origin"},
@@ -54,9 +54,9 @@
       "data": {"url": "data/origins.json"},
       "transform": [
         {"filter": "datum.partner == 'China'"},
-        {"calculate": "'China\\n$' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
+        {"calculate": "'China  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
       ],
-      "mark": {"type": "text", "align": "right", "dx": -8, "dy": 4, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif", "lineHeight": 13},
+      "mark": {"type": "text", "align": "right", "dx": -18, "dy": -12, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif"},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
@@ -66,25 +66,36 @@
     {
       "data": {"url": "data/origins.json"},
       "transform": [
-        {"filter": "indexof(['USA','Japan','Germany'], datum.partner) >= 0"},
-        {"calculate": "datum.partner + '\\n$' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"},
-        {"calculate": "datum.partner == 'Japan' ? -16 : datum.partner == 'Germany' ? -12 : -6", "as": "dy"}
+        {"filter": "datum.partner == 'Japan'"},
+        {"calculate": "'Japan  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
       ],
-      "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif", "lineHeight": 13},
+      "mark": {"type": "text", "align": "left", "dx": 12, "dy": -12, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif"},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
-        "dy": {"field": "dy", "type": "quantitative", "scale": null},
         "text": {"field": "tag", "type": "nominal"}
       }
     },
     {
       "data": {"url": "data/origins.json"},
       "transform": [
-        {"filter": "datum.partner == 'Indonesia'"},
-        {"calculate": "'Indonesia\\n$' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
+        {"filter": "datum.partner == 'USA'"},
+        {"calculate": "'United States  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
       ],
-      "mark": {"type": "text", "align": "center", "dy": 16, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif", "lineHeight": 13},
+      "mark": {"type": "text", "align": "right", "dx": -12, "dy": -16, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "tag", "type": "nominal"}
+      }
+    },
+    {
+      "data": {"url": "data/origins.json"},
+      "transform": [
+        {"filter": "datum.partner == 'Germany'"},
+        {"calculate": "'Germany  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
+      ],
+      "mark": {"type": "text", "align": "right", "dx": -10, "dy": -14, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif"},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},
@@ -95,9 +106,22 @@
       "data": {"url": "data/origins.json"},
       "transform": [
         {"filter": "datum.partner == 'Malaysia'"},
-        {"calculate": "'Malaysia\\n$' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
+        {"calculate": "'Malaysia  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
       ],
-      "mark": {"type": "text", "align": "left", "dx": 8, "dy": -14, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif", "lineHeight": 13},
+      "mark": {"type": "text", "align": "right", "dx": -12, "dy": -16, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "tag", "type": "nominal"}
+      }
+    },
+    {
+      "data": {"url": "data/origins.json"},
+      "transform": [
+        {"filter": "datum.partner == 'Indonesia'"},
+        {"calculate": "'Indonesia  $' + format(datum.usd_million, '.0f') + 'm'", "as": "tag"}
+      ],
+      "mark": {"type": "text", "align": "left", "dx": 12, "dy": 4, "fontSize": 11, "fontWeight": 700, "fill": "#1c1915", "font": "Source Sans 3, sans-serif"},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},

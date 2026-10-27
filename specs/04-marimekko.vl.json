@@ -6,8 +6,8 @@
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "Most players take lessons and practise very little",
-    "subtitle": ["Column width is the share of players.", "Blocks are the share inside that column."],
+    "text": ["Lessons on the left,", "no lessons on the right"],
+    "subtitle": ["Children who already sing or play, 2021–22.", "Each number is the share of that column."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -43,9 +43,9 @@
               "13 weeks or less, 2 hours or less",
               "13 weeks or less, 3 hours or more"
             ],
-            "range": ["#9a3b2f", "#5c241c", "#e7b2a6", "#c46b4a"]
+            "range": ["#c7370b", "#2d2a0f", "#ee851b", "#ffc43f"]
           },
-          "legend": {"orient": "bottom", "columns": 1, "labelLimit": 0, "titleFontSize": 13, "labelFontSize": 13}
+          "legend": {"orient": "bottom", "direction": "horizontal", "columns": 2, "columnPadding": 80, "labelLimit": 0, "titleFontSize": 13, "labelFontSize": 13}
         },
         "tooltip": [
           {"field": "column", "title": "Lessons"},

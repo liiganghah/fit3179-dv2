@@ -6,8 +6,8 @@
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "The two biggest states hear the least live music",
-    "subtitle": ["Children aged 5–14 who went to live music, 2021–22.", "This is attendance, not learning an instrument."],
+    "text": ["Higher attendance away from", "New South Wales and Victoria"],
+    "subtitle": ["Went to live music outside school.", "The colour scale starts at 8, not at zero."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -16,12 +16,12 @@
     "subtitleFont": "Source Sans 3, sans-serif",
     "subtitleFontSize": 13,
     "subtitleColor": "#5c564c",
-    "offset": 12,
+    "offset": 8,
     "limit": 2000
   },
   "projection": {
     "type": "conicEqualArea",
-    "rotate": [132, 0],
+    "rotate": [-134, 0],
     "center": [0, -27],
     "parallels": [-18, -36]
   },
@@ -37,8 +37,8 @@
           "field": "properties.pct",
           "type": "quantitative",
           "title": "Percent",
-          "scale": {"scheme": "reds", "domain": [8, 24]},
-          "legend": {"orient": "bottom", "direction": "horizontal", "gradientLength": 160, "title": "Percent"}
+          "scale": {"domain": [8, 24], "range": ["#f5ae99", "#3c1306"], "interpolate": "hsl"},
+          "legend": {"orient": "bottom", "direction": "horizontal", "gradientLength": 180, "title": "Percent, from 8"}
         },
         "tooltip": [
           {"field": "properties.state", "title": "State or territory", "type": "nominal"},
@@ -55,7 +55,7 @@
         "latitude": {"field": "lat", "type": "quantitative"},
         "text": {"field": "label", "type": "nominal"},
         "color": {
-          "condition": {"test": "datum.pct >= 16", "value": "#fff7f2"},
+          "condition": {"test": "datum.abbr == 'Qld' || datum.abbr == 'WA' || datum.abbr == 'NT'", "value": "#fff7f2"},
           "value": "#1c1915",
           "legend": null
         }

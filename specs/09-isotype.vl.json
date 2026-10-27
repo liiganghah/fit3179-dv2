@@ -1,12 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Isotype. Nineteen of every hundred children sang or played outside school in 2021–22.",
-  "width": "container",
-  "height": 340,
-  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
+  "width": {"step": 39},
+  "height": {"step": 39},
   "background": "#f6f1e7",
   "title": {
-    "text": "Nineteen in every hundred",
+    "text": ["Nineteen in every", "hundred children"],
     "subtitle": ["Each square is one child in a hundred.", "Filled squares round 19.3 percent to 19."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
@@ -33,8 +32,8 @@
       "field": "group",
       "type": "nominal",
       "title": null,
-      "scale": {"domain": ["Sang or played", "Did not"], "range": ["#9a3b2f", "#e4ddd0"]},
-      "legend": {"orient": "bottom", "direction": "horizontal"}
+      "scale": {"domain": ["Sang or played", "Did not"], "range": ["#c7370b", "#e4ddd0"]},
+      "legend": {"orient": "bottom", "direction": "horizontal", "columns": 2, "columnPadding": 56}
     }
   },
   "config": {

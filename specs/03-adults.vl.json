@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Line chart. Adults who sing or play, by age and sex, 2021–22.",
+  "description": "Line chart. Adults who sing or play, by age and sex, 2021–22. Labels mark the fall after 15–24 and name the two lines.",
   "width": "container",
   "height": 280,
+  "padding": {"left": 4, "right": 78, "top": 4, "bottom": 4},
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "After 14, playing becomes uncommon",
+    "text": ["After 14, playing", "becomes uncommon"],
     "subtitle": ["Percent of people aged 15 and over.", "A different question from the child survey."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
@@ -20,38 +21,96 @@
     "limit": 2000
   },
   "data": {"url": "data/adults.json"},
-  "mark": {"type": "line", "point": {"size": 70}, "strokeWidth": 2.6},
-  "encoding": {
-    "x": {
-      "field": "age",
-      "type": "ordinal",
-      "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"],
-      "axis": {"title": "Age", "labelAngle": 0, "labelLimit": 0}
+  "transform": [
+    {"calculate": "datum.pct - datum.moe", "as": "low"},
+    {"calculate": "datum.pct + datum.moe", "as": "high"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rule", "strokeWidth": 1.4, "opacity": 0.55},
+      "encoding": {
+        "x": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"],
+          "axis": {"title": "Age", "labelAngle": 0, "labelLimit": 0}
+        },
+        "xOffset": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {"domain": ["Men", "Women"], "range": [-4, 4]}
+        },
+        "y": {"field": "low", "type": "quantitative", "title": "Percent who sing or play", "scale": {"domain": [0, 10]}},
+        "y2": {"field": "high"},
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "scale": {"domain": ["Men", "Women"], "range": ["#2d2a0f", "#8d4a3c"]},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "sex", "title": "Sex"},
+          {"field": "age", "title": "Age"},
+          {"field": "pct", "title": "Percent", "format": ".1f"},
+          {"field": "moe", "title": "Margin of error, ± percentage points", "format": ".1f"}
+        ]
+      }
     },
-    "y": {
-      "field": "pct",
-      "type": "quantitative",
-      "title": "Percent who sing or play",
-      "scale": {"domain": [0, 10]}
+    {
+      "mark": {"type": "line", "point": {"size": 70}, "strokeWidth": 2.6},
+      "encoding": {
+        "x": {
+          "field": "age",
+          "type": "ordinal",
+          "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"]
+        },
+        "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 10]}},
+        "color": {
+          "field": "sex",
+          "type": "nominal",
+          "title": null,
+          "scale": {"domain": ["Men", "Women"], "range": ["#2d2a0f", "#8d4a3c"]},
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "sex", "title": "Sex"},
+          {"field": "age", "title": "Age"},
+          {"field": "pct", "title": "Percent", "format": ".1f"},
+          {"field": "moe", "title": "Margin of error, ± percentage points", "format": ".1f"}
+        ]
+      }
     },
-    "color": {
-      "field": "sex",
-      "type": "nominal",
-      "title": null,
-      "scale": {"domain": ["Men", "Women"], "range": ["#9a3b2f", "#2f5d50"]},
-      "legend": {"orient": "top-right"}
+    {
+      "transform": [{"filter": "datum.age == '65 and over' && datum.sex == 'Men'"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "dy": -8, "fontSize": 12, "fontWeight": 700, "fill": "#2d2a0f"},
+      "encoding": {
+        "x": {"field": "age", "type": "ordinal", "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"]},
+        "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 10]}},
+        "text": {"value": "Men  3.4"}
+      }
     },
-    "tooltip": [
-      {"field": "sex", "title": "Sex"},
-      {"field": "age", "title": "Age"},
-      {"field": "pct", "title": "Percent", "format": ".1f"},
-      {"field": "moe", "title": "Margin of error, ± percentage points", "format": ".1f"}
-    ]
-  },
+    {
+      "transform": [{"filter": "datum.age == '65 and over' && datum.sex == 'Women'"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "dy": 10, "fontSize": 12, "fontWeight": 700, "fill": "#8d4a3c"},
+      "encoding": {
+        "x": {"field": "age", "type": "ordinal", "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"]},
+        "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 10]}},
+        "text": {"value": "Women  2.9"}
+      }
+    },
+    {
+      "data": {"values": [{"age": "25–34", "pct": 8.6, "label": "Falls after 15–24"}]},
+      "mark": {"type": "text", "align": "center", "fontSize": 12, "fontWeight": 700, "fill": "#c7370b"},
+      "encoding": {
+        "x": {"field": "age", "type": "ordinal", "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"]},
+        "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 10]}},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    }
+  ],
   "config": {
     "font": "Source Sans 3, sans-serif",
     "axis": {"labelColor": "#3d3832", "titleColor": "#5c564c", "gridColor": "#e4ddd0", "domainColor": "#c9c0b2", "labelFontSize": 12, "titleFontSize": 13},
-    "legend": {"labelColor": "#1c1915", "labelFontSize": 13},
     "view": {"stroke": null}
   }
 }

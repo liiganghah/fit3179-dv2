@@ -2,12 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Heatmap. Creative-activity participation by age band, children 5–14, 2021–22.",
   "width": "container",
-  "height": 260,
+  "height": 280,
+  "padding": {"left": 72, "right": 36, "top": 4, "bottom": 4},
   "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "background": "#f6f1e7",
   "title": {
-    "text": "Playing peaks at ages 9 to 11",
-    "subtitle": ["Percent of children in each age band, 2021–22.", "Screen time and reading are left off."],
+    "text": ["Music rises after the", "first years of school"],
+    "subtitle": ["Percent of children in each age band,", "outside school hours, 2021–22."],
     "font": "Fraunces, Georgia, serif",
     "fontSize": 16,
     "fontWeight": 560,
@@ -20,6 +21,12 @@
     "limit": 2000
   },
   "data": {"url": "data/heatmap.json"},
+  "transform": [
+    {
+      "calculate": "datum.activity == 'Creating digital content' ? 'Creating\\ndigital content' : datum.activity == 'Singing or playing' ? 'Singing or\\nplaying' : datum.activity == 'Creative writing' ? 'Creative\\nwriting' : datum.activity",
+      "as": "row"
+    }
+  ],
   "layer": [
     {
       "mark": {"type": "rect", "stroke": "#f6f1e7", "strokeWidth": 4},
@@ -28,8 +35,8 @@
           "field": "pct",
           "type": "quantitative",
           "title": "Percent",
-          "scale": {"scheme": "reds", "domain": [0, 46]},
-          "legend": {"orient": "bottom", "direction": "horizontal", "gradientLength": 140}
+          "scale": {"domain": [0, 50], "range": ["#f5ae99", "#3c1306"], "interpolate": "hsl"},
+          "legend": {"orient": "bottom", "direction": "horizontal", "gradientLength": 160, "values": [0, 25, 50]}
         }
       }
     },
@@ -38,9 +45,16 @@
       "encoding": {
         "text": {"field": "pct", "format": ".1f"},
         "color": {
-          "condition": {"test": "datum.pct >= 30", "value": "#fff7f2"},
+          "condition": {"test": "datum.pct >= 28", "value": "#fff7f2"},
           "value": "#1c1915"
         }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.age == '5–8 years'"}],
+      "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -70, "fontSize": 13, "fill": "#1c1915", "lineBreak": "\n"},
+      "encoding": {
+        "text": {"field": "row", "type": "nominal"}
       }
     }
   ],
@@ -55,7 +69,7 @@
       "field": "activity",
       "type": "ordinal",
       "sort": ["Singing or playing", "Creating digital content", "Creative writing", "Dancing", "Drama", "Art and craft"],
-      "axis": {"title": null, "domain": false, "ticks": false, "labelPadding": 8, "labelLimit": 0}
+      "axis": {"title": null, "domain": false, "ticks": false, "labels": false}
     },
     "tooltip": [
       {"field": "activity", "title": "Activity"},
