@@ -58,7 +58,7 @@
       "sort": ["Electric guitars", "Acoustic pianos", "Electric keyboards", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
       "scale": {
         "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
-        "range": ["#c7370b", "#1d3156", "#496894", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
+        "range": ["#a52d09", "#1d3156", "#496894", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
       },
       "legend": {"orient": "bottom", "columns": 2, "columnPadding": 36, "labelLimit": 0}
     },
@@ -84,7 +84,7 @@
         "type": "nominal",
         "scale": {
           "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
-          "range": ["#c7370b", "#1d3156", "#496894", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
+          "range": ["#a52d09", "#1d3156", "#496894", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
         },
         "legend": null
       },

@@ -38,7 +38,7 @@
           "title": null,
           "scale": {
             "domain": ["Electric guitars", "Electric keyboards", "Acoustic pianos", "Acoustic guitars", "Other wind", "Percussion", "Bowed strings", "Brass"],
-            "range": ["#c7370b", "#496894", "#1d3156", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
+            "range": ["#a52d09", "#496894", "#1d3156", "#8e5815", "#3f4a68", "#6c581d", "#2d2a0f", "#8d4a3c"]
           },
           "legend": null
         },

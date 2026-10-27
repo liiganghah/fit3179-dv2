@@ -100,7 +100,7 @@
     },
     {
       "data": {"values": [{"age": "25–34", "pct": 8.6, "label": "Falls after 15–24"}]},
-      "mark": {"type": "text", "align": "center", "fontSize": 12, "fontWeight": 700, "fill": "#c7370b"},
+      "mark": {"type": "text", "align": "center", "fontSize": 12, "fontWeight": 700, "fill": "#a52d09"},
       "encoding": {
         "x": {"field": "age", "type": "ordinal", "sort": ["15–24", "25–34", "35–44", "45–54", "55–64", "65 and over"]},
         "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 10]}},

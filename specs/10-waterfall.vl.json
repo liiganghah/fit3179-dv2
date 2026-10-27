@@ -40,7 +40,7 @@
           "field": "kind",
           "type": "nominal",
           "title": null,
-          "scale": {"domain": ["Total", "Rise", "Fall"], "range": ["#0f0f0f", "#c7370b", "#3f4a68"]},
+          "scale": {"domain": ["Total", "Rise", "Fall"], "range": ["#0f0f0f", "#a52d09", "#3f4a68"]},
           "legend": {"orient": "bottom", "direction": "horizontal", "labelLimit": 0}
         },
         "tooltip": [

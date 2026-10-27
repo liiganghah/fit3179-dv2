@@ -61,7 +61,7 @@
           "title": "Largest family",
           "scale": {
             "domain": ["Electric guitars", "Acoustic pianos", "Electric keyboards"],
-            "range": ["#c7370b", "#1d3156", "#496894"]
+            "range": ["#a52d09", "#1d3156", "#496894"]
           },
           "legend": {"orient": "bottom", "columns": 1, "labelLimit": 0, "symbolType": "stroke", "symbolStrokeWidth": 4, "padding": 16}
         },

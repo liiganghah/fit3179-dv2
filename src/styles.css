@@ -4,7 +4,7 @@
   --ink: #1c1915;
   --muted: #5c564c;
   --rule: #d4cbbd;
-  --accent: #c7370b;
+  --accent: #a52d09;
   --gap: 1.25rem;
   --section-space: 3.75rem;
 
@@ -279,7 +279,7 @@ a { color: var(--accent); }
 .ink-eguitar,
 .ink-rise,
 .ink-nsw,
-.ink-vic { color: #c7370b; }
+.ink-vic { color: #a52d09; }
 .ink-qld { color: #952e0f; }
 .ink-aguitar { color: #8e5815; }
 .ink-craft,

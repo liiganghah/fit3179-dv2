@@ -32,7 +32,7 @@
       "field": "group",
       "type": "nominal",
       "title": null,
-      "scale": {"domain": ["Sang or played", "Did not"], "range": ["#c7370b", "#e4ddd0"]},
+      "scale": {"domain": ["Sang or played", "Did not"], "range": ["#a52d09", "#e4ddd0"]},
       "legend": {"orient": "bottom", "direction": "horizontal", "columns": 2, "columnPadding": 56}
     }
   },

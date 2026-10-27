@@ -31,7 +31,7 @@
     {
       "data": {"url": "data/origins.json"},
       "transform": [{"filter": "datum.usd_million >= 1 && datum.iso3 != ''"}],
-      "mark": {"type": "circle", "fill": "#c7370b", "fillOpacity": 0.9, "stroke": "#f6f1e7", "strokeWidth": 0.6},
+      "mark": {"type": "circle", "fill": "#a52d09", "fillOpacity": 0.9, "stroke": "#f6f1e7", "strokeWidth": 0.6},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"},

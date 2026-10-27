@@ -51,7 +51,7 @@
           "title": null,
           "scale": {
             "domain": ["Singing or playing", "Art and craft", "Creative writing", "Dancing", "Creating digital content", "Drama"],
-            "range": ["#c7370b", "#6c581d", "#6c6b80", "#3f4a68", "#496894", "#2d2a0f"]
+            "range": ["#a52d09", "#6c581d", "#6c6b80", "#3f4a68", "#496894", "#2d2a0f"]
           },
           "legend": {"orient": "bottom", "columns": 2, "columnPadding": 48, "labelLimit": 0}
         },
@@ -82,7 +82,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Singing or playing", "Art and craft", "Creative writing", "Dancing", "Creating digital content", "Drama"],
-            "range": ["#c7370b", "#6c581d", "#6c6b80", "#3f4a68", "#496894", "#2d2a0f"]
+            "range": ["#a52d09", "#6c581d", "#6c6b80", "#3f4a68", "#496894", "#2d2a0f"]
           },
           "legend": null
         }
@@ -93,7 +93,7 @@
         {"filter": "datum.year == '2021–22' && datum.activity == 'Singing or playing'"},
         {"calculate": "'Music  ' + format(datum.pct, '.1f')", "as": "tag"}
       ],
-      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10, "dy": -12, "fontSize": 11, "fontWeight": 700, "fill": "#c7370b"},
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10, "dy": -12, "fontSize": 11, "fontWeight": 700, "fill": "#a52d09"},
       "encoding": {
         "x": {"field": "year", "type": "ordinal", "scale": {"padding": 0.45}},
         "y": {"field": "pct", "type": "quantitative", "scale": {"domain": [0, 46]}},

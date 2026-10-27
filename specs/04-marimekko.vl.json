@@ -43,7 +43,7 @@
               "13 weeks or less, 2 hours or less",
               "13 weeks or less, 3 hours or more"
             ],
-            "range": ["#c7370b", "#2d2a0f", "#ee851b", "#ffc43f"]
+            "range": ["#a52d09", "#2d2a0f", "#ee851b", "#ffc43f"]
           },
           "legend": {"orient": "bottom", "direction": "horizontal", "columns": 2, "columnPadding": 80, "labelLimit": 0, "titleFontSize": 13, "labelFontSize": 13}
         },
