@@ -55,7 +55,7 @@
         "latitude": {"field": "lat", "type": "quantitative"},
         "text": {"field": "label", "type": "nominal"},
         "color": {
-          "condition": {"test": "datum.abbr == 'Qld' || datum.abbr == 'WA' || datum.abbr == 'ACT' || datum.abbr == 'NT'", "value": "#fff7f2"},
+          "condition": {"test": "datum.abbr == 'Qld' || datum.abbr == 'WA' || datum.abbr == 'NT'", "value": "#fff7f2"},
           "value": "#1c1915",
           "legend": null
         }
